@@ -18,6 +18,7 @@ if (!$filial) {
 
     <div class="down_content">
         <div class="row">
+
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <a href="tel:<?= preg_replace('/[\s\(\)\-]/', '', $filial->phone ) ?>" class="down_content_box">
                     <div class="down_content_box_left">
@@ -29,6 +30,7 @@ if (!$filial) {
                     </div>
                 </a>
             </div>
+
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <a href="<?= $filial->address_link ?>" target="_blank" class="down_content_box">
                     <div class="down_content_box_left">

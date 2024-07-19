@@ -69,7 +69,7 @@ if ($lang == 'ru') {
                             ]) ?>
                         </li>
                     <?php else: ?>
-                        <li><a href="tel:+998978638888" data-aos="zoom-in" data-aos-duration="1000"><p><?= Yii::t("app" , "a2") ?></p> <span></span></a></li>
+                        <li><a href="tel:+998788886666" data-aos="zoom-in" data-aos-duration="1000"><p><?= Yii::t("app" , "a2") ?></p> <span></span></a></li>
                         <li><a href="#ik_direc" data-aos="zoom-in" data-aos-duration="1000"><p><?= Yii::t("app" , "a3") ?></p> <span></span></a></li>
                         <li><a href="<?= Url::to(['site/login']) ?>" data-aos="zoom-in" data-aos-duration="1000"><p><?= Yii::t("app" , "a4") ?></p> <span></span></a></li>
                     <?php endif; ?>
@@ -210,7 +210,7 @@ if ($lang == 'ru') {
 
                                 <?php else: ?>
                                     <li>
-                                        <a href="tel:+998978638888">
+                                        <a href="tel:+998788886666">
                                             <i class="fa-solid fa-phone"></i>
                                             <span><?= Yii::t("app" , "a2") ?></span>
                                         </a>
