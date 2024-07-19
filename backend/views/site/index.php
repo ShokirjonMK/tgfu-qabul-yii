@@ -11,7 +11,7 @@ use Da\QrCode\QrCode;
 /** @var EduYearType $eduYearTypes */
 /** @var User $currentUser */
 
-$this->title = 'TASHKENT PERFECT UNIVERSITY';
+$this->title = 'TOSHKENT GUMANITAR FANLAR UNIVERSITETI';
 $baseQuery = Student::find()
     ->alias('s')
     ->innerJoin('user u', 's.user_id = u.id')
