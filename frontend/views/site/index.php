@@ -3,7 +3,7 @@ use yii\helpers\Url;
 
 /** @var yii\web\View $this */
 
-$this->title = 'TASHKENT PERFECT UNIVERSITY';
+$this->title = 'TOSHKENT GUMANITAR FANLAR UNIVERSITETI';
 ?>
 
 <div class="mainPage">
