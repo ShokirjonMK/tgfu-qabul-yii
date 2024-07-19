@@ -52,7 +52,7 @@ class Message extends \yii\db\ActiveRecord
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $data,
             CURLOPT_HTTPHEADER => array(
-                "Authorization: Basic ".base64_encode("perfectuniversity:i_A~87mSz8@H"),
+                "Authorization: Basic ".base64_encode("tgfu:M40KH237PwM]"),
                 "cache-control: no-cache",
                 "content-type: application/json",
             ),
@@ -94,7 +94,7 @@ class Message extends \yii\db\ActiveRecord
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $data,
             CURLOPT_HTTPHEADER => array(
-                "Authorization: Basic ".base64_encode("perfectuniversity:i_A~87mSz8@H"),
+                "Authorization: Basic ".base64_encode("tgfu:M40KH237PwM]"),
                 "cache-control: no-cache",
                 "content-type: application/json",
             ),
