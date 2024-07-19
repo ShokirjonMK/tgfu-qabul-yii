@@ -177,6 +177,11 @@ return [
     'a157' => 'Be a student too',
 
 
+    'a158' => 'You can register for the master\'s degree online',
+
+
+
+
 ];
 
 

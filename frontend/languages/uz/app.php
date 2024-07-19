@@ -174,6 +174,8 @@ return [
     'a156' => 'Men talaba bo\'ldim',
     'a157' => 'Sen ham talaba bo\'l',
 
+    'a158' => 'Magistr uchun online ro\'yxatdan o\'tishingiz mumkin',
+
 
 
 

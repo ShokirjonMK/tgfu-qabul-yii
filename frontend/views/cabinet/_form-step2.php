@@ -6,6 +6,9 @@ use yii\helpers\Url;
 use common\models\EduYear;
 use common\models\EduYearType;
 
+
+$lang = Yii::$app->language;
+
 $activeYear = EduYear::findOne([
     'status' => 1,
     'is_deleted' => 0
@@ -28,7 +31,7 @@ $count = 1;
 $qabulText = Yii::t("app" , "a54");
 $perevotText = Yii::t("app" , "a55");
 $dtmText = Yii::t("app" , "a56");
-$magistrText = 'Magistr uchun online ro\'yxatdan o\'tishingiz mumkin';
+$magistrText = Yii::t("app" , "a158");
 
 $dtm = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="#fff">
                         <g clip-path="url(#clip0_84_360)">
@@ -116,7 +119,7 @@ $magistr = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.o
                                 <?php endif; ?>
                             </span>
                             <div class="stepCheckLabelText">
-                                <h5><?= $eduType->name_uz ?></h5>
+                                <h5><?= $eduType['name_'.$lang] ?></h5>
                                 <p>
 
                                     <?php if ($eduType->id == 1) : ?>
