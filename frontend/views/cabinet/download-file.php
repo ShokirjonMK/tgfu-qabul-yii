@@ -23,7 +23,7 @@ if ($student->edu_type_id == 1) {
         'direction_id' => $direction->id,
         'is_deleted' => 0
     ]);
-    if ($exam->file_status == 2) {
+    if ($exam->status == 3) {
         $t = true;
         $contractType = $exam->contract_type;
     }
