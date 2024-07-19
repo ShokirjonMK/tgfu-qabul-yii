@@ -26,7 +26,7 @@ use yii\helpers\Url;
                             <p><?= Yii::t("app" , "a1") ?></p>
                             <ul>
                                 <li>
-                                    <a href="tel:+998945055250" data-bs-toggle="modal" data-bs-target="#connectionModal">
+                                    <a href="tel:+998978638888" data-bs-toggle="modal" data-bs-target="#connectionModal">
                                         <i class="fa-solid fa-phone"></i>
                                         <span><?= Yii::t("app" , "a2") ?></span>
                                     </a>
