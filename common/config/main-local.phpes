@@ -5,6 +5,7 @@ return [
         'db' => [
             'class' => \yii\db\Connection::class,
             'dsn' => 'mysql:host=localhost;dbname=tgfuqabuul',
+            'port' => '3300',
             'username' => 'root',
             'password' => 'mktgfuQabu11',
             'charset' => 'utf8',
