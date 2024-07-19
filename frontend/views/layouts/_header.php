@@ -228,10 +228,10 @@ if ($lang == 'ru') {
                         <div class="ik_sidebar_list">
                             <p><?= Yii::t("app" , "a5") ?></p>
                             <ul>
-                                <li><a style="font-size: 14px;" href="https://www.instagram.com/perfect.university?igsh=ODhqOWJpMnM0YTFk"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a style="font-size: 14px;" href="https://t.me/perfect_university"><i class="fa-brands fa-telegram"></i></a></li>
+                                <li><a style="font-size: 14px;" href="https://www.instagram.com/tgfu_uz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a style="font-size: 14px;" href="https://t.me/tgfu_uzb"><i class="fa-brands fa-telegram"></i></a></li>
                                 <li><a style="font-size: 14px;" href="https://www.facebook.com/perfectuniversity.uz?mibextid=kFxxJD"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a style="font-size: 14px;" href="https://youtube.com/@perfectuniversity4471?si=1hvUQR7t5bATWlcI"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a style="font-size: 14px;" href="https://youtube.com/@tgfuofficial?si=teblBgMHa0fG-nus"><i class="fa-brands fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
