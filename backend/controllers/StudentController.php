@@ -22,6 +22,7 @@ use common\models\ExamSubject;
 use common\models\Student;
 use common\models\StudentDtm;
 use common\models\StudentDtmSearch;
+use common\models\StudentMagistr;
 use common\models\StudentOferta;
 use common\models\StudentPerevot;
 use common\models\StudentSearch;
@@ -515,6 +516,7 @@ class StudentController extends Controller
             StudentDtm::deleteAll(['student_id' => $student->id]);
             StudentPerevot::deleteAll(['student_id' => $student->id]);
             StudentOferta::deleteAll(['student_id' => $student->id]);
+            StudentMagistr::deleteAll(['student_id' => $student->id]);
             ExamStudentQuestions::deleteAll(['user_id' => $student->user_id]);
             AuthAssignment::deleteAll(['user_id' => $student->user_id]);
             ExamSubject::deleteAll(['user_id' => $student->user_id]);
