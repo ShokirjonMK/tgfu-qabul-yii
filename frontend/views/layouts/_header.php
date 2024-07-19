@@ -69,9 +69,9 @@ if ($lang == 'ru') {
                             ]) ?>
                         </li>
                     <?php else: ?>
-                        <li><a href="tel:+998945055250" data-aos="zoom-in" data-aos-duration="1000"><p>Aloqa</p> <span></span></a></li>
-                        <li><a href="#ik_direc" data-aos="zoom-in" data-aos-duration="1000"><p>Yo'nalishlar</p> <span></span></a></li>
-                        <li><a href="<?= Url::to(['site/login']) ?>" data-aos="zoom-in" data-aos-duration="1000"><p>Ariza topshirish</p> <span></span></a></li>
+                        <li><a href="tel:+998945055250" data-aos="zoom-in" data-aos-duration="1000"><p><?= Yii::t("app" , "a2") ?></p> <span></span></a></li>
+                        <li><a href="#ik_direc" data-aos="zoom-in" data-aos-duration="1000"><p><?= Yii::t("app" , "a3") ?></p> <span></span></a></li>
+                        <li><a href="<?= Url::to(['site/login']) ?>" data-aos="zoom-in" data-aos-duration="1000"><p><?= Yii::t("app" , "a4") ?></p> <span></span></a></li>
                     <?php endif; ?>
                 </ul>
             </div>
@@ -130,10 +130,10 @@ if ($lang == 'ru') {
             <div class="ik_ijtimoiy">
                 <div class="mb_menu_list">
                     <ul>
-                        <li data-aos="fade-left"><a href="https://www.instagram.com/perfect.university?igsh=ODhqOWJpMnM0YTFk"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li data-aos="fade-left" data-aos-delay="100"><a href="https://t.me/perfect_university"><i class="fa-brands fa-telegram"></i></a></li>
+                        <li data-aos="fade-left"><a href="https://www.instagram.com/tgfu_uz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li data-aos="fade-left" data-aos-delay="100"><a href="https://t.me/tgfu_uzb"><i class="fa-brands fa-telegram"></i></a></li>
                         <li data-aos="fade-left" data-aos-delay="200"><a href="https://www.facebook.com/perfectuniversity.uz?mibextid=kFxxJD"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li data-aos="fade-left" data-aos-delay="300"><a href="https://youtube.com/@perfectuniversity4471?si=1hvUQR7t5bATWlcI"><i class="fa-brands fa-youtube"></i></a></li>
+                        <li data-aos="fade-left" data-aos-delay="300"><a href="https://youtube.com/@tgfuofficial?si=teblBgMHa0fG-nus"><i class="fa-brands fa-youtube"></i></a></li>
                     </ul>
                 </div>
             </div>
