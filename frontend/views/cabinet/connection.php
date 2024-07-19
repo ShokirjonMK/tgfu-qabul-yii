@@ -42,7 +42,7 @@ if (!$filial) {
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="https://www.instagram.com/perfect.university/" target="_blank" class="down_content_box">
+                <a href="https://www.instagram.com/tgfu_uz/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" class="down_content_box">
                     <div class="down_content_box_left">
                         <img src="/frontend/web/images/instagram.svg" alt="">
                     </div>
@@ -54,7 +54,7 @@ if (!$filial) {
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="https://www.facebook.com/perfectuniversity.uz" target="_blank" class="down_content_box">
+                <a href="https://www.facebook.com/tgfu.uz?mibextid=ZbWKwL" target="_blank" class="down_content_box">
                     <div class="down_content_box_left">
                         <img src="/frontend/web/images/facebook.svg" alt="">
                     </div>
@@ -66,7 +66,7 @@ if (!$filial) {
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="https://t.me/perfect_university" target="_blank" class="down_content_box">
+                <a href="https://t.me/tgfu_uzb" target="_blank" class="down_content_box">
                     <div class="down_content_box_left">
                         <img src="/frontend/web/images/telegram.svg" alt="">
                     </div>
@@ -78,7 +78,7 @@ if (!$filial) {
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="https://www.youtube.com/@perfectuniversity4471" target="_blank" class="down_content_box">
+                <a href="https://youtube.com/@tgfuofficial?si=teblBgMHa0fG-nus" target="_blank" class="down_content_box">
                     <div class="down_content_box_left">
                         <img src="/frontend/web/images/youtube.svg" alt="">
                     </div>
