@@ -176,6 +176,8 @@ return [
 
     'a158' => 'Magistr uchun online ro\'yxatdan o\'tishingiz mumkin',
 
+    'a159' => 'Yangi parol',
+    'a160' => 'Yangi parolni takrorlang',
 
 
 

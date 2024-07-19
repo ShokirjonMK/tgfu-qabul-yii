@@ -34,10 +34,9 @@ $this->title = Yii::t("app" , "a28");
                 ],
             ])->label('<i class="fa-solid fa-user-check"></i>') ?>
 
+        <?= $form->field($model, 'password' , ['template' => "{input} \n {label} \n {error} \n <i id='eyePassword' class='fas fa-eye-slash'></i>"])->passwordInput(['id'=>'eye_password', 'placeholder' => Yii::t("app" , "a159")])->label('<i class="fa-solid fa-lock"></i>') ?>
 
-        <?= $form->field($model, 'password' , ['template' => "{input} \n {label} \n {error} \n <i id='eyePassword' class='fas fa-eye-slash'></i>"])->passwordInput(['id'=>'eye_password', 'placeholder' => 'Yangi parol'])->label('<i class="fa-solid fa-lock"></i>') ?>
-
-        <?= $form->field($model, 'reset_password' , ['template' => "{input} \n {label} \n {error} \n <i id='eyePassword1' class='fas fa-eye-slash'></i>"])->passwordInput(['id'=>'eye_password1', 'placeholder' => 'Yangi parolni takrorlang'])->label('<i class="fa-solid fa-lock"></i>') ?>
+        <?= $form->field($model, 'reset_password' , ['template' => "{input} \n {label} \n {error} \n <i id='eyePassword1' class='fas fa-eye-slash'></i>"])->passwordInput(['id'=>'eye_password1', 'placeholder' => Yii::t("app" , "a160")])->label('<i class="fa-solid fa-lock"></i>') ?>
 
         <div class="sign_in">
             <?= Html::submitButton(Yii::t("app" , "a31"), ['class' => 'b-btn b-primary btn-block mtop30', 'name' => 'login-button']) ?>

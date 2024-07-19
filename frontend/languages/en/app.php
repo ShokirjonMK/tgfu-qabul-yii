@@ -180,6 +180,8 @@ return [
     'a158' => 'You can register for the master\'s degree online',
 
 
+    'a159' => 'Новый пароль',
+    'a160' => 'Повторите новый пароль',
 
 
 ];

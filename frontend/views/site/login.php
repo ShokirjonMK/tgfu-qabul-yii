@@ -35,7 +35,7 @@ $this->title = Yii::t("app" , "a23");
                 ],
             ])->label('<i class="fa-solid fa-user-check"></i>') ?>
 
-        <?= $form->field($model, 'password' , ['template' => "{input} \n {label} \n {error} \n <i id='eyePassword' class='fas fa-eye-slash'></i>"])->passwordInput(['id'=>'eye_password', 'placeholder' => 'Parol'])->label('<i class="fa-solid fa-lock"></i>') ?>
+        <?= $form->field($model, 'password' , ['template' => "{input} \n {label} \n {error} \n <i id='eyePassword' class='fas fa-eye-slash'></i>"])->passwordInput(['id'=>'eye_password', 'placeholder' => Yii::t("app" , "a135")])->label('<i class="fa-solid fa-lock"></i>') ?>
 
         <div class="reset_pass">
             <a href="<?= Url::to(['site/reset-password']) ?>"><?= Yii::t("app" , "a25") ?></a>
