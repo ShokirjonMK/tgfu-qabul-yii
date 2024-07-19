@@ -170,6 +170,13 @@ return [
     'a153' => 'Click to upload file',
 
     'a154' => 'Territory',
+
+    'a155' => 'Admission <br> System',
+
+    'a156' => 'I became a student',
+    'a157' => 'Be a student too',
+
+
 ];
 
 

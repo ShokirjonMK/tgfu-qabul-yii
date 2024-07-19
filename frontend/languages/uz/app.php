@@ -170,6 +170,13 @@ return [
 
     'a154' => 'Hudud',
 
+    'a155' => 'Qabul <br> Tizimi',
+    'a156' => 'Men talaba bo\'ldim',
+    'a157' => 'Sen ham talaba bo\'l',
+
+
+
+
 
 ];
 
