@@ -137,7 +137,7 @@ class SettingController extends Controller
                                             $t = $ball;
                                             $exam->contract_type = 1.5;
                                             $exam->contract_price = $direaction->contract * 1.5;
-                                        } elseif ($ball >= 10 && $ball <= 56.7) {
+                                        } elseif ($ball >= 10 && $ball <= 56) {
                                             $t = rand(58 , 65);
                                             $exam->contract_type = 1;
                                             $exam->contract_price = $direaction->contract;
