@@ -20,5 +20,8 @@ configure common/config/main-local.php file (db)
 
 
 -----------------
-  `docker compose down`
+
+  `docker compose down` 
+
+  
 
