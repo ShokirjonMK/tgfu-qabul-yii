@@ -70,7 +70,7 @@ if ($student->edu_type_id == 1) {
         'file_status' => 2,
         'is_deleted' => 0
     ]);
-    $code = $cons->code.'-D2UZ';
+    $code = $cons->code.'-M2UZ';
     $date = date("Y-m-d H:i:s" , $contract->confirm_date);
     $link = $contract->contract_link;
     $con2 = $contract->contract_second;
