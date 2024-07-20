@@ -21,6 +21,7 @@ AppAsset::register($this);
         <?= $this->render('_css'); ?>
         <link href="/frontend/web/images/tgfu-logo-notext.svg" rel="icon">
         <link href="/frontend/web/images/tgfu-logo-notext.svg" rel="apple-touch-icon">
+        <script src="https://www.wiris.net/demo/plugins/app/WIRISplugins.js?viewer=image"></script>
         <?php $this->head() ?>
     </head>
     <body>
