@@ -36,7 +36,7 @@ class AppAsset extends AssetBundle
 //        '../editor/js/google_analytics.js',
         'js/alert.js',
         'js/sidebar1.js',
-        'js/jquery.masknumber.js',
+//        'js/jquery.masknumber.js',
         'js/mask.js',
         'js/sweet.js',
         'js/file-upload.js',
