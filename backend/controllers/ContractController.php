@@ -88,6 +88,18 @@ class ContractController extends Controller
         return $pdf->render();
     }
 
+    public function actionBug3()
+    {
+        $directions = Direction::find()
+            ->where(['edu_type_id' => 1, 'edu_form_id' => 3, 'status' => 1, 'is_deleted' => 0])
+            ->all();
+
+        foreach ($directions as $direction) {
+            $direction->status = 1;
+            $direction->save(false);
+        }
+
+    }
     public function actionBug2()
     {
         $directions = Direction::find()
@@ -109,6 +121,7 @@ class ContractController extends Controller
             $new->code = $direction->code;
             $new->oferta = $direction->oferta;
             $new->edu_duration = 4.5;
+            $new->status = 1;
             $new->save(false);
             $directionSubjects = DirectionSubject::find()
                 ->where([

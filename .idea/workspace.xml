@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f7deae5-b292-449c-b34e-f5ac63e50ba9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/ContractController.php" afterDir="false" />
-    </list>
+    <list default="true" id="8f7deae5-b292-449c-b34e-f5ac63e50ba9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,7 +195,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721385540056</updated>
-      <workItem from="1721385541100" duration="19825000" />
+      <workItem from="1721385541100" duration="20131000" />
     </task>
     <servers />
   </component>
