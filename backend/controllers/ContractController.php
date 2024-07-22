@@ -88,19 +88,7 @@ class ContractController extends Controller
         return $pdf->render();
     }
 
-    public function actionBug3()
-    {
-        $directions = Direction::find()
-            ->where(['edu_type_id' => 1, 'edu_form_id' => 3, 'is_deleted' => 0])
-            ->all();
-
-        foreach ($directions as $direction) {
-            $direction->status = 1;
-            $direction->save(false);
-        }
-
-    }
-    public function actionBug2()
+    public function actionBug4()
     {
         $directions = Direction::find()
             ->where(['edu_type_id' => 1, 'edu_form_id' => 1, 'status' => 1, 'is_deleted' => 0])
@@ -113,8 +101,8 @@ class ContractController extends Controller
             $new->name_en = $direction->name_en;
             $new->edu_year_id = $direction->edu_year_id;
             $new->language_id = $direction->language_id;
-            $new->edu_year_type_id = 1;
-            $new->edu_type_id = 1;
+            $new->edu_year_type_id = 2;
+            $new->edu_type_id = 2;
             $new->edu_year_form_id = 3;
             $new->edu_form_id = 3;
             $new->contract = 16000000;
@@ -123,24 +111,6 @@ class ContractController extends Controller
             $new->edu_duration = 4.5;
             $new->status = 1;
             $new->save(false);
-            $directionSubjects = DirectionSubject::find()
-                ->where([
-                    'direction_id' => $direction->id,
-                    'status' => 1,
-                    'is_deleted' => 0
-                ])
-                ->all();
-            if (count($directionSubjects) > 0) {
-                foreach ($directionSubjects as $directionSubject) {
-                    $sub = new DirectionSubject();
-                    $sub->direction_id = $new->id;
-                    $sub->subject_id = $directionSubject->subject_id;
-                    $sub->ball = $directionSubject->ball;
-                    $sub->question_count = $directionSubject->question_count;
-                    $sub->save(false);
-                }
-            }
-
         }
 
         return $this->redirect(['site/index']);
