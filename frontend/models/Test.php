@@ -159,7 +159,7 @@ class Test extends Model
             $examSubject->save(false);
         }
 
-        if ($model->ball < 56) {
+        if ($model->ball < 30) {
             $model->contract_type = 1.5;
             $model->contract_price = $direction->contract * 1.5;
         } else {
