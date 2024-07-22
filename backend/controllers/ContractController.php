@@ -88,10 +88,10 @@ class ContractController extends Controller
         return $pdf->render();
     }
 
-    public function actionBug4()
+    public function actionBug5()
     {
         $directions = Direction::find()
-            ->where(['edu_type_id' => 1, 'edu_form_id' => 1, 'status' => 1, 'is_deleted' => 0])
+            ->where(['edu_type_id' => 1, 'status' => 1, 'is_deleted' => 0])
             ->all();
 
         foreach ($directions as $direction) {
@@ -101,14 +101,14 @@ class ContractController extends Controller
             $new->name_en = $direction->name_en;
             $new->edu_year_id = $direction->edu_year_id;
             $new->language_id = $direction->language_id;
-            $new->edu_year_type_id = 2;
-            $new->edu_type_id = 2;
-            $new->edu_year_form_id = 3;
-            $new->edu_form_id = 3;
-            $new->contract = 16000000;
+            $new->edu_year_type_id = 3;
+            $new->edu_type_id = 3;
+            $new->edu_year_form_id = $direction->edu_year_form_id;
+            $new->edu_form_id = $direction->edu_year_form_id;
+            $new->contract = $direction->contract;
             $new->code = $direction->code;
             $new->oferta = $direction->oferta;
-            $new->edu_duration = 4.5;
+            $new->edu_duration = $direction->edu_duration;
             $new->status = 1;
             $new->save(false);
         }
