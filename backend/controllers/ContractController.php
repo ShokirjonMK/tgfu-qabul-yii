@@ -91,7 +91,7 @@ class ContractController extends Controller
     public function actionBug3()
     {
         $directions = Direction::find()
-            ->where(['edu_type_id' => 1, 'edu_form_id' => 3, 'status' => 1, 'is_deleted' => 0])
+            ->where(['edu_type_id' => 1, 'edu_form_id' => 3, 'is_deleted' => 0])
             ->all();
 
         foreach ($directions as $direction) {
