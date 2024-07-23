@@ -76,13 +76,8 @@ class AddBall extends Model
                 $exam->ball = $ball;
                 $exam->status = 3;
                 $exam->confirm_date = time();
-                if ($exam->ball < 30) {
-                    $exam->contract_type = 1.5;
-                    $exam->contract_price = $exam->direction->contract;
-                } else {
-                    $exam->contract_type = 1;
-                    $exam->contract_price = $exam->direction->contract;
-                }
+                $exam->contract_type = 1;
+                $exam->contract_price = $exam->direction->contract;
                 $exam->save(false);
             }
         }
