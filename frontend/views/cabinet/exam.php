@@ -219,7 +219,7 @@ if ($direction->oferta == 1) {
                     </div>
                 <?php endif; ?>
 
-                <?php if ($exam->status == 3) : ?>
+                <?php if ($exam->status == 3 && $exam->ball > 60) : ?>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="down_content_box">
                             <div class="down_content_box_left">
@@ -296,7 +296,7 @@ if ($direction->oferta == 1) {
                                     </div>
 
                                     <?php if ($student->exam_type == 0) : ?>
-                                        <?php if ($exam->status == 3 && $exam->ball > 65 && count($questions) > 0) : ?>
+                                        <?php if ($exam->status == 3 && $exam->ball > 60 && count($questions) > 0) : ?>
                                             <div class="cfile_box_head_left_info">
                                                 <div class="cfile_box_head_left_info_left">
                                                     <p><?= Yii::t("app" , "a98") ?> </p>
