@@ -119,7 +119,7 @@ class SignupForm extends Model
 
             $domen  = $_SERVER['HTTP_HOST'];
 
-            if ($domen == "edu.tpu.uz") {
+            if ($domen == "edu.tgfu.uz") {
                 $user->cons_id = 2;
             }
 
