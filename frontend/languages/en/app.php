@@ -169,7 +169,7 @@ return [
     'a152' => 'Upload your diploma documents in one pdf!',
     'a153' => 'Click to upload file',
 
-    'a154' => 'Territory',
+    'a154' => 'Branch',
 
     'a155' => 'Admission <br> System',
 

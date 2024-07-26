@@ -168,7 +168,7 @@ return [
     'a152' => 'Diplom hujjatlaringizni bitta pdfga joylab yuklang!',
     'a153' => 'Fayl yuklash uchun bosing',
 
-    'a154' => 'Hudud',
+    'a154' => 'Filial',
 
     'a155' => 'Qabul <br> Tizimi',
     'a156' => 'Men talaba bo\'ldim',
