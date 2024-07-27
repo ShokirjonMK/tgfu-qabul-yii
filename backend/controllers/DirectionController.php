@@ -6,6 +6,7 @@ use common\models\Direction;
 use common\models\DirectionSearch;
 use common\models\DirectionSubject;
 use common\models\EduYear;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -29,6 +30,20 @@ class DirectionController extends Controller
                     'class' => VerbFilter::className(),
                     'actions' => [
                         'delete' => ['POST'],
+                    ],
+                ],
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'roles' => ['supper_admin'],
+                        ],
+                        [
+                            'allow' => true,
+                            'actions' => ['index'],
+                            'roles' => ['admin' , 'moderator'],
+                        ],
                     ],
                 ],
             ]

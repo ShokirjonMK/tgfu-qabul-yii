@@ -153,14 +153,14 @@ function getActiveTwo($cont, $act)
                         </div>
                     </li>
 
-                    <li class="sidebar_li">
-                        <a href="<?= Url::to(['direction/index']) ?>" class="sidebar_li_link">
-                            <i class="i-n fa-solid fa-bars-staggered"></i>
-                            <span>Yo'nalishlar</span>
-                        </a>
-                    </li>
-
                 <?php endif; ?>
+
+                <li class="sidebar_li">
+                    <a href="<?= Url::to(['direction/index']) ?>" class="sidebar_li_link">
+                        <i class="i-n fa-solid fa-bars-staggered"></i>
+                        <span>Yo'nalishlar</span>
+                    </a>
+                </li>
 
                 <li class="sidebar_li sidebar_drop">
                     <a href="javascript: void(0);" class="sidebar_li_link">
