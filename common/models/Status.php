@@ -88,7 +88,7 @@ class Status
             2 => 'Testda',
             3 => 'Yakunladi',
             4 => 'Shartnoma olgan',
-            5 => 'Shatnoma olmagan',
+            5 => 'Shartnoma olmagan',
         ];
         if ($id == null) {
             return $data;
