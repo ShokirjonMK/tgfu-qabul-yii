@@ -143,7 +143,7 @@ $lang = Yii::$app->language;
                 <div class="mb_menu_list2">
                     <ul>
                         <li>
-                            <a href="tel:+998998351393">
+                            <a href="https://t.me/globalsoftline">
                                 <span><?= Yii::t("app" , "a22") ?> <b>GLOBAL SOFTLINE GROUP</b></span>
                             </a>
                         </li>
