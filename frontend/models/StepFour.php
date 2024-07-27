@@ -105,6 +105,7 @@ class StepFour extends Model
 
         if (count($errors) == 0) {
             $user->step = 5;
+            $user->created_at = time();
             $user->save(false);
             $transaction->commit();
             return ['is_ok' => true];
