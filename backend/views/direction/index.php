@@ -12,6 +12,11 @@ use common\models\EduYearType;
 use common\models\EduYear;
 use kartik\select2\Select2;
 use common\models\Status;
+use common\models\Student;
+use common\models\Exam;
+use common\models\StudentDtm;
+use common\models\StudentPerevot;
+use common\models\StudentMagistr;
 
 /** @var yii\web\View $this */
 /** @var common\models\DirectionSearch $searchModel */
@@ -23,9 +28,24 @@ $breadcrumbs['item'][] = [
     'label' => Yii::t('app', 'Bosh sahifa'),
     'url' => ['/'],
 ];
+$user = Yii::$app->user->identity;
 $eduYear = EduYear::findOne(['status' => 1, 'is_deleted' => 0]);
 $eduYearTypes = EduYearType::getEduTypeName($eduYear);
 $eduYearForms = EduYearForm::getEduFormName($eduYear);
+$baseQuery = Student::find()
+    ->alias('s')
+    ->innerJoin('user u', 's.user_id = u.id')
+    ->where(['u.cons_id' => $user->cons_id, 'u.user_role' => 'student']);
+
+$exam = Exam::find()
+    ->where(['is_deleted' => 0]);
+$dtm = StudentDtm::find()
+    ->where(['is_deleted' => 0]);
+$perevot = StudentDtm::find()
+    ->where(['is_deleted' => 0]);
+$magister = StudentMagistr::find()
+    ->where(['is_deleted' => 0]);
+
 ?>
 <div class="direction-index">
 
@@ -111,6 +131,71 @@ $eduYearForms = EduYearForm::getEduFormName($eduYear);
                 'filter' => Html::activeDropDownList($searchModel, 'status',
                     Status::accessStatus(),
                     ['class'=>'form-control','prompt' => 'Status ...']),
+            ],
+            [
+                'attribute' => 'Arizalar',
+                'format' => 'raw',
+                'value' => function ($model) use ($exam,$dtm,$perevot, $magister) {
+                    $examCount = (clone $exam)
+                        ->andWhere(['direction_id' => $model->id]);
+                    $dtmCount = (clone $dtm)
+                        ->andWhere(['direction_id' => $model->id]);
+                    $perevotCount = (clone $perevot)
+                        ->andWhere(['direction_id' => $model->id]);
+                    $magisterCount = (clone $magister)
+                        ->andWhere(['direction_id' => $model->id]);
+
+                    $eCount = (clone $examCount)
+                        ->andWhere(['<' , 'status' , 3])->count();
+                    $dCount = (clone $dtmCount)
+                        ->andWhere(['<' , 'file_status' , 2])->count();
+                    $pCount = (clone $perevotCount)
+                        ->andWhere(['<' , 'file_status' , 2])->count();
+                    $mCount = (clone $magisterCount)
+                        ->andWhere(['<' , 'file_status' , 2])->count();
+
+                    $eCountb = (clone $examCount)
+                        ->andWhere(['=' , 'status' , 4])->count();
+                    $dCountb = (clone $dtmCount)
+                        ->andWhere(['file_status' => 3])->count();
+                    $pCountb = (clone $perevotCount)
+                        ->andWhere(['file_status' => 3])->count();
+                    $mCountb = (clone $magisterCount)
+                        ->andWhere(['file_status' => 3])->count();
+
+                    $kutilmoqda = $eCount + $dCount + $pCount + $mCount;
+                    $bekor = $eCountb + $dCountb + $pCountb + $mCountb;
+                    $jami = $examCount->count() + $dtmCount->count() + $perevotCount->count() + $magisterCount->count();
+
+                    return "<div><div class='badge-table-div active mb-2'>Jami: ".$jami."</div><br><div class='badge-table-div active mb-2'>K/B: ". $kutilmoqda ." / ".$bekor."</div></div>";
+                },
+            ],
+            [
+                'attribute' => 'Shartnoma',
+                'format' => 'raw',
+                'value' => function ($model) use ($exam,$dtm,$perevot, $magister) {
+                    $examCount = (clone $exam)
+                        ->andWhere(['status' => 3, 'direction_id' => $model->id]);
+                    $dtmCount = (clone $dtm)
+                        ->andWhere(['file_status' => 2, 'direction_id' => $model->id]);
+                    $perevotCount = (clone $perevot)
+                        ->andWhere(['file_status' => 2, 'direction_id' => $model->id]);
+                    $magisterCount = (clone $magister)
+                        ->andWhere(['file_status' => 2, 'direction_id' => $model->id]);
+
+                    $eCount = (clone $examCount)
+                        ->andWhere(['>' , 'down_time' , 0])->count();
+                    $dCount = (clone $dtmCount)
+                        ->andWhere(['>' , 'down_time' , 0])->count();
+                    $pCount = (clone $perevotCount)
+                        ->andWhere(['>' , 'down_time' , 0])->count();
+                    $mCount = (clone $magisterCount)
+                        ->andWhere(['>' , 'down_time' , 0])->count();
+                    $olgan = $eCount + $dCount + $pCount + $mCount;
+                    $jami = $examCount->count() + $dtmCount->count() + $perevotCount->count() + $magisterCount->count();
+
+                    return "<div><div class='badge-table-div active mb-2'>Olgan: ". $olgan ."</div><br><div class='badge-table-div active'>Olmagan: ".$jami - $olgan."</div></div>";
+                },
             ],
             [
                 'attribute' => '',
