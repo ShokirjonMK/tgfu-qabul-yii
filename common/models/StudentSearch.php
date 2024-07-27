@@ -82,14 +82,35 @@ class StudentSearch extends Student
 
         if ($this->status != null) {
             if ($edu_type->edu_type_id == 1) {
-                $query->andWhere(
-                    ['in' , 'id' ,
-                        Exam::find()->select('student_id')
-                            ->where([
-                                'edu_year_type_id' => $edu_type->id,
-                                'status' => $this->status,
-                            ])
-                    ]);
+                if ($this->status <= 3) {
+                    $query->andWhere(
+                        ['in' , 'id' ,
+                            Exam::find()->select('student_id')
+                                ->where([
+                                    'edu_year_type_id' => $edu_type->id,
+                                    'status' => $this->status,
+                                ])
+                        ]);
+                } elseif ($this->status == 4) {
+                    $query->andWhere(
+                        ['in' , 'id' ,
+                            Exam::find()->select('student_id')
+                                ->where([
+                                    'edu_year_type_id' => $edu_type->id,
+                                    'status' => 3,
+                                ])->andWhere(['>' , 'down_time' , 0])
+                        ]);
+                } elseif ($this->status == 5) {
+                    $query->andWhere(
+                        ['in' , 'id' ,
+                            Exam::find()->select('student_id')
+                                ->where([
+                                    'edu_year_type_id' => $edu_type->id,
+                                    'status' => 3,
+                                    'down_time' => null
+                                ])
+                        ]);
+                }
             } elseif ($edu_type->edu_type_id == 2) {
                 $query->andWhere(
                     ['in' , 'id' ,
