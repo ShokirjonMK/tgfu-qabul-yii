@@ -137,12 +137,6 @@ class Passport extends Model
                 '1959587' => $student->passport_serial,  // pas seriya
                 '1959589' => $student->passport_number, // pas raqam
                 '1959591' => $student->birthday, // Tug'ilgan sana
-                '1959593' => null, // qabul turi
-                '1959595' => null, // Filial
-                '1959597' => null, // Ta'lim shakli
-                '1959599' => null, // Ta'lim tili
-                '1959601' => null, // Ta'lim yo'nalishi
-                '1959603' => null, // Imtixon shakli
             ];
 
             $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
