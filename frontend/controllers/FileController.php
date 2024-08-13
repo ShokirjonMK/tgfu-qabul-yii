@@ -10,6 +10,7 @@ use common\models\StudentDtm;
 use common\models\StudentMagistr;
 use common\models\StudentOferta;
 use common\models\StudentPerevot;
+use common\models\User;
 use frontend\models\Contract;
 use frontend\models\SerCreate;
 use frontend\models\SerDel;
@@ -361,6 +362,27 @@ class FileController extends Controller
                 'keywords' => 'pdf, contract, student',
             ],
         ]);
+
+        if ($student->lead_id != null) {
+            try {
+                $amoCrmClient = Yii::$app->ikAmoCrm;
+                $leadId = $student->lead_id;
+                $tags = [];
+                $message = '';
+                $customFields = [];
+
+                $updatedFields = [
+                    'pipelineId' => $student->pipeline_id,
+                    'statusId' => User::STEP_STATUS_7
+                ];
+
+                $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+            } catch (\Exception $e) {
+                $errors[] = ['Ma\'lumot uzatishda xatolik STEP 2: ' . $e->getMessage()];
+                Yii::$app->session->setFlash('error' , $errors);
+                return $this->redirect(['cabinet/index']);
+            }
+        }
 
         return $pdf->render();
     }
