@@ -79,6 +79,13 @@ class SiteController extends Controller
     }
 
 
+    public function actionCr()
+    {
+        $amoCrmClient = Yii::$app->ikAmoCrm->getPipelines();
+        dd($amoCrmClient);
+    }
+
+
     public function actionIndex()
     {
         Yii::$app->session->remove('redirected_from_flayer');

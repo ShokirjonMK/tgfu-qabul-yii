@@ -138,6 +138,17 @@ class SignupForm extends Model
                 $newStudent->updated_by = 0;
                 $newStudent->save(false);
 
+                // crm ga uzatish
+                $result = $this->sendCrm($user , $domen);
+                if ($result['is_ok']) {
+                    $amo = $result['data'];
+                    $newStudent->lead_id = $amo->id;
+                    $newStudent->pipeline_id = $amo->pipelineId;
+                    $newStudent->status_id = $amo->statusId;
+                    $newStudent->save(false);
+                } else {
+                    $errors[] = $result['errors'];
+                }
             } else {
                 $errors[] = ['Student not saved.'];
             }
@@ -158,17 +169,40 @@ class SignupForm extends Model
      * @param User $user user model to with email should be send
      * @return bool whether the email was sent
      */
-    protected function sendEmail($user)
+    protected function sendCrm($user , $domen)
     {
-        return Yii::$app
-            ->mailer
-            ->compose(
-                ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-                ['user' => $user]
-            )
-            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
-            ->setTo($this->email)
-            ->setSubject('Account registration at ' . Yii::$app->name)
-            ->send();
+        $errors = [];
+        try {
+            $amoCrmClient = Yii::$app->ikAmoCrm;
+
+            $normalizedPhoneNumber = preg_replace('/[^\d+]/', '', $user->username);
+
+            $leadName = $normalizedPhoneNumber;
+            $message = '';
+            $tags = ['@ikbol_2001'];
+            $pipelineId = User::PIPELINE_ID;
+            $statusId = User::STEP_STATUS_1;
+            $leadPrice = 0;
+            $customFields = [
+                '1959579' => $leadName // Tel raqami
+            ];
+
+            $phoneNumber = $normalizedPhoneNumber;
+
+            $newLead = $amoCrmClient->addLeadToPipeline(
+                $phoneNumber,
+                $leadName,
+                $message,
+                $tags,
+                $customFields,
+                $pipelineId,
+                $statusId,
+                $leadPrice
+            );
+
+            return ['is_ok' => true , 'data' => $newLead];
+        } catch (\Exception $e) {
+            return ['is_ok' => false, 'errors' => ['Ma\'lumot uzatishda xatolik: ' . $e->getMessage()]];
+        }
     }
 }

@@ -28,7 +28,8 @@
         "phpoffice/phpspreadsheet": "^1.21",
         "phpoffice/phpword": "^1.1",
         "kartik-v/yii2-export": "@dev",
-        "dotzero/yii2-amocrm": "^0.2.2"
+        "dotzero/yii2-amocrm": "^0.2.2",
+        "amocrm/amocrm-api-library": "^1.9"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

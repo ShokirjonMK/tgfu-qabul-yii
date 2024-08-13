@@ -39,11 +39,15 @@ use Yii;
  * @property int $created_by
  * @property int $updated_by
  * @property int $is_deleted
+ * @property string|null $lead_id
+ * @property string|null $pipeline_id
+ * @property string|null $status_id
  *
  * @property User $user
  * @property EduYearType $eduYearType
  * @property Languages $language
  * @property  $eduStatus
+ * @property  $filial
  */
 class Student extends \yii\db\ActiveRecord
 {
@@ -80,7 +84,7 @@ class Student extends \yii\db\ActiveRecord
             [['birthday'], 'safe'],
             [['first_name', 'last_name', 'middle_name', 'username', 'password', 'passport_number', 'passport_serial', 'passport_pin', 'passport_issued_date', 'passport_given_date', 'passport_given_by'], 'string', 'max' => 255],
             [['student_phone'], 'string', 'max' => 100],
-            [['edu_name' , 'edu_direction'], 'string', 'max' => 255],
+            [['edu_name' , 'edu_direction' , 'lead_id' , 'pipeline_id' , 'status_id'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
             [['edu_year_type_id'], 'exist', 'skipOnError' => true, 'targetClass' => EduYearType::class, 'targetAttribute' => ['edu_year_type_id' => 'id']],
             [['course_id'], 'exist', 'skipOnError' => true, 'targetClass' => Course::class, 'targetAttribute' => ['course_id' => 'id']],
@@ -149,6 +153,11 @@ class Student extends \yii\db\ActiveRecord
     public function getDirection()
     {
         return $this->hasOne(Direction::class, ['id' => 'direction_id']);
+    }
+
+    public function getFilial()
+    {
+        return $this->hasOne(Filial::class, ['id' => 'filial_id']);
     }
 
     public function getDirectionCourse()

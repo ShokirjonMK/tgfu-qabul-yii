@@ -86,6 +86,21 @@ class Verify extends Model
                 $user->sms_number = 0;
                 $user->sms_time = 0;
                 $user->save(false);
+
+                $student = $user->student;
+                if ($student->lead_id != null) {
+                    // crm ga uzatish
+                    $result = Verify::updateCrm($student);
+                    if ($result['is_ok']) {
+                        $amo = $result['data'];
+                        $student->pipeline_id = $amo->pipelineId;
+                        $student->status_id = $amo->statusId;
+                        $student->save(false);
+                    } else {
+                        $errors[] = $result['errors'];
+                    }
+                }
+
                 Yii::$app->user->login($user,  3600 * 15);
             } else {
                 $errors[] = ['SMS kod noto\'g\'ri.'];
@@ -130,7 +145,6 @@ class Verify extends Model
             return ['is_ok' => false , 'errors' => $errors , 'user' => $user];
         }
     }
-
 
     public static function password($user , $model) {
         $transaction = Yii::$app->db->beginTransaction();
@@ -183,4 +197,25 @@ class Verify extends Model
         }
     }
 
+    public static function updateCrm($student)
+    {
+        try {
+            $amoCrmClient = Yii::$app->ikAmoCrm;
+            $leadId = $student->lead_id;
+            $tags = [];
+            $customFields = [];
+            $message = '';
+
+            $updatedFields = [
+                'pipelineId' => $student->pipeline_id,
+                'statusId' => User::STEP_STATUS_2
+            ];
+
+            $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+            return ['is_ok' => true, 'data' => $updatedLead];
+        } catch (\Exception $e) {
+            $errors[] = ['Ma\'lumot uzatishda xatolik STEP 2: ' . $e->getMessage()];
+            return ['is_ok' => false, 'errors' => $errors];
+        }
+    }
 }

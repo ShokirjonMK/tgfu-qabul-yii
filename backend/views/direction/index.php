@@ -243,6 +243,4 @@ $magister = StudentMagistr::find()
             ],
         ],
     ]); ?>
-
-
 </div>

@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f7deae5-b292-449c-b34e-f5ac63e50ba9" name="Changes" comment="" />
+    <list default="true" id="8f7deae5-b292-449c-b34e-f5ac63e50ba9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tgfu-qabul-yii.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tgfu-qabul-yii.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/direction/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/direction/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Verify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/SignupForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/StepFour.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepFour.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/StepOne.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepOne.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/StepSecond.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepSecond.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/StepThree.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepThree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/StepThree2.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepThree2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/StepThree3.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepThree3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/StepThree4.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepThree4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,11 +185,29 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/amocrm/amocrm-api-library" />
+      <path value="$PROJECT_DIR$/vendor/amocrm/oauth2-amocrm" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-client" />
+      <path value="$PROJECT_DIR$/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/stella-maris/clock" />
+      <path value="$PROJECT_DIR$/vendor/fig/http-message-util" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2jSfkIBJOFvjIvuCTFYWfwl2sFt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -166,6 +217,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/OpenServer/OSPanel/domains/tgfu-qabul-yii/common",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -174,6 +226,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\OSPanel\domains\tgfu-qabul-yii\common" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="CodeceptionConfigurationType" factoryName="Codeception">
       <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/codeception.yml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
@@ -195,7 +252,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721385540056</updated>
-      <workItem from="1721385541100" duration="35765000" />
+      <workItem from="1721385541100" duration="46666000" />
+      <workItem from="1723094513898" duration="3965000" />
+      <workItem from="1723453490722" duration="4597000" />
     </task>
     <servers />
   </component>

@@ -43,6 +43,16 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_INACTIVE = 9;
     const STATUS_ACTIVE = 10;
 
+    const PIPELINE_ID = 8492570;
+
+    const STEP_STATUS_1 = 69034702; // Toliq ro'yhatdan o'tmaganlar
+    const STEP_STATUS_2 = 69034706; // Tel raqam tasdiqlaganlar
+    const STEP_STATUS_3 = 69034710; // Pasport kiritganlar
+    const STEP_STATUS_4 = 69034950; // Qabul turini tanlaganlar
+    const STEP_STATUS_5 = 69034954; // Yonalish tanlaganlar
+    const STEP_STATUS_6 = 69034958; // Ariza Tasdiqlaganlar
+    const STEP_STATUS_7 = 142; // Shartnoma olganlar
+    const STEP_STATUS_8 = 143;  // O'qishni istamaganlar
 
     /**
      * {@inheritdoc}

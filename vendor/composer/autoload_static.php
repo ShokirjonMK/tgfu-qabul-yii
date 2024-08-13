@@ -16,15 +16,19 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'e3b2795a8a512b6083af088fb53afe6c' => __DIR__ . '/..' . '/codeception/codeception/functions.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        'db356362850385d08a5381de2638b5fd' => __DIR__ . '/..' . '/mpdf/mpdf/src/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
+        'db356362850385d08a5381de2638b5fd' => __DIR__ . '/..' . '/mpdf/mpdf/src/functions.php',
+        '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
+        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'a9ed0d27b5a698798a89181429f162c5' => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib/Common/customFunctions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '77e7c5c0b74965caa0fbb0a094b7713f' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/bootstrap.php',
     );
 
@@ -87,25 +91,36 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php83\\' => 23,
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Mime\\' => 23,
             'Symfony\\Component\\Mailer\\' => 25,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\Dotenv\\' => 25,
             'Symfony\\Component\\DomCrawler\\' => 29,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Symfony\\Component\\Clock\\' => 24,
             'Symfony\\Component\\BrowserKit\\' => 29,
+            'StellaMaris\\Clock\\' => 18,
+        ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\' => 12,
+            'Ramsey\\Collection\\' => 18,
         ),
         'P' => 
         array (
@@ -116,6 +131,7 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
             'Psr\\Http\\Client\\' => 16,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'Psr\\Clock\\' => 10,
             'PhpParser\\' => 10,
             'PhpOffice\\PhpWord\\' => 18,
             'PhpOffice\\PhpSpreadsheet\\' => 25,
@@ -130,6 +146,12 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
             'Matrix\\' => 7,
             'MabeEnum\\' => 9,
         ),
+        'L' => 
+        array (
+            'League\\OAuth2\\Client\\' => 21,
+            'Lcobucci\\JWT\\' => 13,
+            'Lcobucci\\Clock\\' => 15,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -138,6 +160,7 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         ),
         'F' => 
         array (
+            'Fig\\Http\\Message\\' => 17,
             'Faker\\' => 6,
         ),
         'E' => 
@@ -158,13 +181,28 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
             'Complex\\' => 8,
             'Codeception\\Extension\\' => 22,
             'Codeception\\' => 12,
+            'Carbon\\Doctrine\\' => 16,
+            'Carbon\\' => 7,
         ),
         'B' => 
         array (
+            'Brick\\Math\\' => 11,
             'BaconQrCode\\' => 12,
         ),
         'A' => 
         array (
+            'AmoCRM\\Support\\' => 15,
+            'AmoCRM\\OAuth\\' => 13,
+            'AmoCRM\\OAuth2\\Client\\Provider\\' => 30,
+            'AmoCRM\\Models\\' => 14,
+            'AmoCRM\\Helpers\\' => 15,
+            'AmoCRM\\Filters\\' => 15,
+            'AmoCRM\\Exceptions\\' => 18,
+            'AmoCRM\\Enum\\' => 12,
+            'AmoCRM\\EntitiesServices\\' => 24,
+            'AmoCRM\\Contracts\\' => 17,
+            'AmoCRM\\Collections\\' => 19,
+            'AmoCRM\\Client\\' => 14,
             'AmoCRM\\' => 7,
         ),
     );
@@ -289,6 +327,10 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         array (
             0 => __DIR__ . '/..' . '/phpoffice/math/tests/Math',
         ),
+        'Symfony\\Polyfill\\Php83\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php83',
+        ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
@@ -313,6 +355,10 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Symfony\\Contracts\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
+        ),
         'Symfony\\Contracts\\Service\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
@@ -328,6 +374,10 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'Symfony\\Component\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation',
         ),
         'Symfony\\Component\\String\\' => 
         array (
@@ -349,6 +399,10 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
+        'Symfony\\Component\\Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dotenv',
+        ),
         'Symfony\\Component\\DomCrawler\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/dom-crawler',
@@ -361,9 +415,25 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Symfony\\Component\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/clock',
+        ),
         'Symfony\\Component\\BrowserKit\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
+        ),
+        'StellaMaris\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stella-maris/clock/src',
+        ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
+        'Ramsey\\Collection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/collection/src',
         ),
         'Psy\\' => 
         array (
@@ -393,6 +463,10 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Psr\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
         'PhpParser\\' => 
         array (
@@ -434,6 +508,18 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         array (
             0 => __DIR__ . '/..' . '/marc-mabe/php-enum/src',
         ),
+        'League\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
+        ),
+        'Lcobucci\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
+        ),
+        'Lcobucci\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lcobucci/clock/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -445,6 +531,10 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Fig\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fig/http-message-util/src',
         ),
         'Faker\\' => 
         array (
@@ -492,13 +582,74 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
             1 => __DIR__ . '/..' . '/codeception/stub/src',
             2 => __DIR__ . '/..' . '/codeception/verify/src/Codeception',
         ),
+        'Carbon\\Doctrine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
+        ),
+        'Carbon\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Brick\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/math/src',
+        ),
         'BaconQrCode\\' => 
         array (
             0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
         ),
+        'AmoCRM\\Support\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Support',
+        ),
+        'AmoCRM\\OAuth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/OAuth',
+        ),
+        'AmoCRM\\OAuth2\\Client\\Provider\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/oauth2-amocrm/src',
+        ),
+        'AmoCRM\\Models\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Models',
+        ),
+        'AmoCRM\\Helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Helpers',
+        ),
+        'AmoCRM\\Filters\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Filters',
+        ),
+        'AmoCRM\\Exceptions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Exceptions',
+        ),
+        'AmoCRM\\Enum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Enum',
+        ),
+        'AmoCRM\\EntitiesServices\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/EntitiesServices',
+        ),
+        'AmoCRM\\Contracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Contracts',
+        ),
+        'AmoCRM\\Collections\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Collections',
+        ),
+        'AmoCRM\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src/AmoCRM/Client',
+        ),
         'AmoCRM\\' => 
         array (
             0 => __DIR__ . '/..' . '/dotzero/amocrm/src',
+            1 => __DIR__ . '/..' . '/amocrm/amocrm-api-library/src',
         ),
     );
 
@@ -559,7 +710,17 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         'Codeception\\Util\\Shared\\InheritedAsserts' => __DIR__ . '/..' . '/codeception/lib-asserts/src/Codeception/Util/Shared/InheritedAsserts.php',
         'Codeception\\Util\\Uri' => __DIR__ . '/..' . '/codeception/lib-web/src/Util/Uri.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
+        'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
+        'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
+        'DateInvalidTimeZoneException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidTimeZoneException.php',
+        'DateMalformedIntervalStringException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateMalformedIntervalStringException.php',
+        'DateMalformedPeriodStringException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateMalformedPeriodStringException.php',
+        'DateMalformedStringException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateMalformedStringException.php',
+        'DateObjectError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateObjectError.php',
+        'DateRangeError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateRangeError.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
+        'Override' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/Override.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
@@ -980,6 +1141,7 @@ class ComposerStaticInitaabd880f3a499ced44b0b1756fabf861
         'PharIo\\Version\\VersionConstraintParser' => __DIR__ . '/..' . '/phar-io/version/src/VersionConstraintParser.php',
         'PharIo\\Version\\VersionConstraintValue' => __DIR__ . '/..' . '/phar-io/version/src/VersionConstraintValue.php',
         'PharIo\\Version\\VersionNumber' => __DIR__ . '/..' . '/phar-io/version/src/VersionNumber.php',
+        'SQLite3Exception' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',
