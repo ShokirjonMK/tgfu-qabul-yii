@@ -159,11 +159,64 @@ class StepThree2 extends Model
         }
 
         if (count($errors) == 0) {
+            if ($student->lead_id != null) {
+                $result = StepThree2::updateCrm($student);
+                if ($result['is_ok']) {
+                    $amo = $result['data'];
+                    $student->pipeline_id = $amo->pipelineId;
+                    $student->status_id = $amo->statusId;
+                    $student->save(false);
+                } else {
+                    return ['is_ok' => false, 'errors' => $result['errors']];
+                }
+            }
             $transaction->commit();
             return ['is_ok' => true];
         }
         $transaction->rollBack();
         return ['is_ok' => false, 'errors' => $errors];
+    }
+
+    public static function updateCrm($student)
+    {
+        try {
+            $amoCrmClient = Yii::$app->ikAmoCrm;
+            $leadId = $student->lead_id;
+            $tags = [];
+            $message = '';
+
+            $updatedFields = [
+                'pipelineId' => $student->pipeline_id,
+                'statusId' => User::STEP_STATUS_6
+            ];
+
+            $examTYpe = "Online";
+            if ($student->exam_type == 1) {
+                $examTYpe = "Offline";
+            }
+
+            $customFields = [
+                // '1959581' => $student->last_name, // Familya
+                // '1959583' => $student->first_name, // Ism
+                // '1959585' => $student->middle_name,  // Otasi
+                // '1959587' => $student->passport_serial,  // pas seriya
+                // '1959589' => $student->passport_number, // pas raqam
+                // '1959591' => $student->birthday, // Tug'ilgan sana
+                '1959593' => $student->eduType->name_uz, // qabul turi
+                '1959595' => $student->filial->name_uz, // Filial
+                '1959597' => $student->eduForm->name_uz, // Ta'lim shakli
+                '1959599' => $student->language->name_uz, // Ta'lim tili
+                '1959601' => $student->direction->name_uz, // Ta'lim yo'nalishi
+                '1959603' => $examTYpe, // Imtixon shakli
+            ];
+
+
+            $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+            return ['is_ok' => true, 'data' => $updatedLead];
+        } catch (\Exception $e) {
+            $errors[] = ['Ma\'lumot uzatishda xatolik STEP 2: ' . $e->getMessage()];
+            return ['is_ok' => false, 'errors' => $errors];
+        }
     }
 
 }

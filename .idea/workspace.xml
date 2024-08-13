@@ -5,38 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f7deae5-b292-449c-b34e-f5ac63e50ba9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tgfu-qabul-yii.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tgfu-qabul-yii.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/direction/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/direction/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/Verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Verify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/SignupForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/StepFour.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepFour.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/StepOne.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepOne.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/StepSecond.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepSecond.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/StepThree.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepThree.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/StepThree2.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepThree2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/StepThree3.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepThree3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/StepThree4.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StepThree4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Passport.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Passport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/StepThree.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/StepThree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/StepThree2.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/StepThree2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/StepThree3.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/StepThree3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/StepThree4.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/StepThree4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/UserUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/UserUpdate.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +229,7 @@
       <updated>1721385540056</updated>
       <workItem from="1721385541100" duration="46666000" />
       <workItem from="1723094513898" duration="3965000" />
-      <workItem from="1723453490722" duration="4597000" />
+      <workItem from="1723453490722" duration="6115000" />
     </task>
     <servers />
   </component>

@@ -5,6 +5,7 @@ namespace backend\models;
 use common\models\AuthAssignment;
 use common\models\Message;
 use common\models\Student;
+use common\models\Verify;
 use Yii;
 use yii\base\Model;
 use common\models\User;
@@ -65,12 +66,47 @@ class UserUpdate extends Model
         $student->password = $this->password;
         $student->save(false);
 
+        if ($user->step == 1 && $student->lead_id != null) {
+            // crm ga uzatish
+            $result = UserUpdate::updateCrm($student);
+            if ($result['is_ok']) {
+                $amo = $result['data'];
+                $student->pipeline_id = $amo->pipelineId;
+                $student->status_id = $amo->statusId;
+                $student->save(false);
+            } else {
+                $errors[] = $result['errors'];
+            }
+        }
+
         if (count($errors) == 0) {
             $transaction->commit();
             return ['is_ok' => true];
         }
         $transaction->rollBack();
         return ['is_ok' => false, 'errors' => $errors];
+    }
+
+    public static function updateCrm($student)
+    {
+        try {
+            $amoCrmClient = Yii::$app->ikAmoCrm;
+            $leadId = $student->lead_id;
+            $tags = [];
+            $customFields = [];
+            $message = '';
+
+            $updatedFields = [
+                'pipelineId' => $student->pipeline_id,
+                'statusId' => User::STEP_STATUS_2
+            ];
+
+            $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+            return ['is_ok' => true, 'data' => $updatedLead];
+        } catch (\Exception $e) {
+            $errors[] = ['Ma\'lumot uzatishda xatolik STEP 2: ' . $e->getMessage()];
+            return ['is_ok' => false, 'errors' => $errors];
+        }
     }
 
 }
