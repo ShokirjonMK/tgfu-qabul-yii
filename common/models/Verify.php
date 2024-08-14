@@ -90,15 +90,15 @@ class Verify extends Model
                 $student = $user->student;
                 if ($student->lead_id != null) {
                     // crm ga uzatish
-                    $result = Verify::updateCrm($student);
-                    if ($result['is_ok']) {
-                        $amo = $result['data'];
-                        $student->pipeline_id = $amo->pipelineId;
-                        $student->status_id = $amo->statusId;
-                        $student->save(false);
-                    } else {
-                        $errors[] = $result['errors'];
-                    }
+//                    $result = Verify::updateCrm($student);
+//                    if ($result['is_ok']) {
+//                        $amo = $result['data'];
+//                        $student->pipeline_id = $amo->pipelineId;
+//                        $student->status_id = $amo->statusId;
+//                        $student->save(false);
+//                    } else {
+//                        $errors[] = $result['errors'];
+//                    }
                 }
 
                 Yii::$app->user->login($user,  3600 * 15);

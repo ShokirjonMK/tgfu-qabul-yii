@@ -255,7 +255,6 @@ class AmoCrmClient extends Component  implements AmoCrmSettings, IAmoCrmClient
 
                 $lead->setCustomFieldsValues($customFieldsCollection);
             }
-
             // 5. Leadni yangilash
             $updatedLead = $this->apiClient->leads()->updateOne($lead);
 

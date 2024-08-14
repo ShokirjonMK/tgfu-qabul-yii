@@ -139,16 +139,16 @@ class SignupForm extends Model
                 $newStudent->save(false);
 
                 // crm ga uzatish
-                $result = $this->sendCrm($user , $domen);
-                if ($result['is_ok']) {
-                    $amo = $result['data'];
-                    $newStudent->lead_id = $amo->id;
-                    $newStudent->pipeline_id = $amo->pipelineId;
-                    $newStudent->status_id = $amo->statusId;
-                    $newStudent->save(false);
-                } else {
-                    $errors[] = $result['errors'];
-                }
+//                $result = $this->sendCrm($user , $domen);
+//                if ($result['is_ok']) {
+//                    $amo = $result['data'];
+//                    $newStudent->lead_id = $amo->id;
+//                    $newStudent->pipeline_id = $amo->pipelineId;
+//                    $newStudent->status_id = $amo->statusId;
+//                    $newStudent->save(false);
+//                } else {
+//                    $errors[] = $result['errors'];
+//                }
             } else {
                 $errors[] = ['Student not saved.'];
             }

@@ -66,18 +66,18 @@ class UserUpdate extends Model
         $student->password = $this->password;
         $student->save(false);
 
-        if ($user->step == 1 && $student->lead_id != null) {
-            // crm ga uzatish
-            $result = UserUpdate::updateCrm($student);
-            if ($result['is_ok']) {
-                $amo = $result['data'];
-                $student->pipeline_id = $amo->pipelineId;
-                $student->status_id = $amo->statusId;
-                $student->save(false);
-            } else {
-                $errors[] = $result['errors'];
-            }
-        }
+//        if ($user->step == 1 && $student->lead_id != null) {
+//            // crm ga uzatish
+//            $result = UserUpdate::updateCrm($student);
+//            if ($result['is_ok']) {
+//                $amo = $result['data'];
+//                $student->pipeline_id = $amo->pipelineId;
+//                $student->status_id = $amo->statusId;
+//                $student->save(false);
+//            } else {
+//                $errors[] = $result['errors'];
+//            }
+//        }
 
         if (count($errors) == 0) {
             $transaction->commit();

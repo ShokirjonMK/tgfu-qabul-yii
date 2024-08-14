@@ -86,26 +86,26 @@ class ContractController extends Controller
             ],
         ]);
 
-        if ($student->lead_id != null) {
-            try {
-                $amoCrmClient = \Yii::$app->ikAmoCrm;
-                $leadId = $student->lead_id;
-                $tags = [];
-                $message = '';
-                $customFields = [];
-
-                $updatedFields = [
-                    'pipelineId' => $student->pipeline_id,
-                    'statusId' => User::STEP_STATUS_7
-                ];
-
-                $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
-            } catch (\Exception $e) {
-                $errors[] = ['Ma\'lumot uzatishda xatolik STEP 2: ' . $e->getMessage()];
-                \Yii::$app->session->setFlash('error' , $errors);
-                return $this->redirect(['cabinet/index']);
-            }
-        }
+//        if ($student->lead_id != null) {
+//            try {
+//                $amoCrmClient = \Yii::$app->ikAmoCrm;
+//                $leadId = $student->lead_id;
+//                $tags = [];
+//                $message = '';
+//                $customFields = [];
+//
+//                $updatedFields = [
+//                    'pipelineId' => $student->pipeline_id,
+//                    'statusId' => User::STEP_STATUS_7
+//                ];
+//
+//                $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+//            } catch (\Exception $e) {
+//                $errors[] = ['Ma\'lumot uzatishda xatolik STEP 2: ' . $e->getMessage()];
+//                \Yii::$app->session->setFlash('error' , $errors);
+//                return $this->redirect(['cabinet/index']);
+//            }
+//        }
         return $pdf->render();
     }
 

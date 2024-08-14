@@ -159,17 +159,17 @@ class StepThree2 extends Model
         }
 
         if (count($errors) == 0) {
-            if ($student->lead_id != null) {
-                $result = StepThree2::updateCrm($student);
-                if ($result['is_ok']) {
-                    $amo = $result['data'];
-                    $student->pipeline_id = $amo->pipelineId;
-                    $student->status_id = $amo->statusId;
-                    $student->save(false);
-                } else {
-                    return ['is_ok' => false, 'errors' => $result['errors']];
-                }
-            }
+//            if ($student->lead_id != null) {
+//                $result = StepThree2::updateCrm($student);
+//                if ($result['is_ok']) {
+//                    $amo = $result['data'];
+//                    $student->pipeline_id = $amo->pipelineId;
+//                    $student->status_id = $amo->statusId;
+//                    $student->save(false);
+//                } else {
+//                    return ['is_ok' => false, 'errors' => $result['errors']];
+//                }
+//            }
             $transaction->commit();
             return ['is_ok' => true];
         }

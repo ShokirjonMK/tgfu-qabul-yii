@@ -90,17 +90,17 @@ class Passport extends Model
                     $user->step = 2;
                     $user->save(false);
                 }
-                if ($student->lead_id != null) {
-                    $result = Passport::updateCrm($student);
-                    if ($result['is_ok']) {
-                        $amo = $result['data'];
-                        $student->pipeline_id = $amo->pipelineId;
-                        $student->status_id = $amo->statusId;
-                        $student->save(false);
-                    } else {
-                        return ['is_ok' => false, 'errors' => $result['errors']];
-                    }
-                }
+//                if ($student->lead_id != null) {
+//                    $result = Passport::updateCrm($student);
+//                    if ($result['is_ok']) {
+//                        $amo = $result['data'];
+//                        $student->pipeline_id = $amo->pipelineId;
+//                        $student->status_id = $amo->statusId;
+//                        $student->save(false);
+//                    } else {
+//                        return ['is_ok' => false, 'errors' => $result['errors']];
+//                    }
+//                }
             }
         } else {
             $errors[] = ['Ma\'lumotlarni olishda xatolik yuz berdi.'];
