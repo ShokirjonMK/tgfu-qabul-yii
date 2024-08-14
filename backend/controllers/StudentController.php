@@ -513,26 +513,26 @@ class StudentController extends Controller
             $t = true;
         }
         if ($t) {
-            if ($student->lead_id != null) {
-                try {
-                    $amoCrmClient = Yii::$app->ikAmoCrm;
-                    $leadId = $student->lead_id;
-                    $tags = [];
-                    $message = '';
-                    $customFields = [];
-
-                    $updatedFields = [
-                        'pipelineId' => $student->pipeline_id,
-                        'statusId' => User::STEP_STATUS_8
-                    ];
-
-                    $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
-                } catch (\Exception $e) {
-                    $errors[] = ['Ma\'lumot uzatishda xatolik STEP 2: ' . $e->getMessage()];
-                    Yii::$app->session->setFlash('error' , $errors);
-                    return $this->redirect(['site/index']);
-                }
-            }
+//            if ($student->lead_id != null) {
+//                try {
+//                    $amoCrmClient = Yii::$app->ikAmoCrm;
+//                    $leadId = $student->lead_id;
+//                    $tags = [];
+//                    $message = '';
+//                    $customFields = [];
+//
+//                    $updatedFields = [
+//                        'pipelineId' => $student->pipeline_id,
+//                        'statusId' => User::STEP_STATUS_8
+//                    ];
+//
+//                    $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+//                } catch (\Exception $e) {
+//                    $errors[] = ['Ma\'lumot uzatishda xatolik STEP 2: ' . $e->getMessage()];
+//                    Yii::$app->session->setFlash('error' , $errors);
+//                    return $this->redirect(['site/index']);
+//                }
+//            }
             StudentDtm::deleteAll(['student_id' => $student->id]);
             StudentPerevot::deleteAll(['student_id' => $student->id]);
             StudentOferta::deleteAll(['student_id' => $student->id]);
