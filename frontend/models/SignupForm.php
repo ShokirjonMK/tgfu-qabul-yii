@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use common\models\AuthAssignment;
+use common\models\CrmPush;
 use common\models\Message;
 use common\models\Student;
 use Yii;
@@ -139,6 +140,14 @@ class SignupForm extends Model
                 $newStudent->save(false);
 
                 // crm ga uzatish
+
+                $crm = new CrmPush();
+                $crm->student_id = $newStudent->id;
+                $crm->type = 1;
+                $crm->lead_status = User::STEP_STATUS_1;
+                $crm->data_save_time = time();
+                $crm->save(false);
+
 //                $result = $this->sendCrm($user , $domen);
 //                if ($result['is_ok']) {
 //                    $amo = $result['data'];

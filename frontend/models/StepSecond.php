@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use common\models\AuthAssignment;
+use common\models\CrmPush;
 use common\models\EduYear;
 use common\models\EduYearType;
 use common\models\Exam;
@@ -92,6 +93,24 @@ class StepSecond extends Model
             }
             $user->step = 3;
             $user->save(false);
+
+            $queryCrm = CrmPush::findOne([
+                'student_id' => $student->id,
+                'type' => 1,
+            ]);
+            if ($queryCrm) {
+                $leadId = null;
+                if ($queryCrm) {
+                    $leadId = $queryCrm->lead_id;
+                }
+                $crm = new CrmPush();
+                $crm->student_id = $student->id;
+                $crm->type = 4;
+                $crm->lead_id = $leadId;
+                $crm->lead_status = User::STEP_STATUS_4;
+                $crm->data_save_time = time();
+                $crm->save(false);
+            }
         }
 
         if (count($errors) == 0) {

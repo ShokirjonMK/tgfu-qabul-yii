@@ -88,17 +88,23 @@ class Verify extends Model
                 $user->save(false);
 
                 $student = $user->student;
-                if ($student->lead_id != null) {
-                    // crm ga uzatish
-//                    $result = Verify::updateCrm($student);
-//                    if ($result['is_ok']) {
-//                        $amo = $result['data'];
-//                        $student->pipeline_id = $amo->pipelineId;
-//                        $student->status_id = $amo->statusId;
-//                        $student->save(false);
-//                    } else {
-//                        $errors[] = $result['errors'];
-//                    }
+
+                $queryCrm = CrmPush::findOne([
+                    'student_id' => $student->id,
+                    'type' => 1,
+                ]);
+                if ($queryCrm) {
+                    $leadId = null;
+                    if ($queryCrm) {
+                        $leadId = $queryCrm->lead_id;
+                    }
+                    $crm = new CrmPush();
+                    $crm->student_id = $student->id;
+                    $crm->type = 2;
+                    $crm->lead_id = $leadId;
+                    $crm->lead_status = User::STEP_STATUS_2;
+                    $crm->data_save_time = time();
+                    $crm->save(false);
                 }
 
                 Yii::$app->user->login($user,  3600 * 15);

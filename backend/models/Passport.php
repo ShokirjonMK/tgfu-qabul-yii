@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use common\models\AuthAssignment;
+use common\models\CrmPush;
 use common\models\Message;
 use common\models\Student;
 use Yii;
@@ -90,6 +91,25 @@ class Passport extends Model
                     $user->step = 2;
                     $user->save(false);
                 }
+
+                $queryCrm = CrmPush::findOne([
+                    'student_id' => $student->id,
+                    'type' => 1,
+                ]);
+                if ($queryCrm) {
+                    $leadId = null;
+                    if ($queryCrm) {
+                        $leadId = $queryCrm->lead_id;
+                    }
+                    $crm = new CrmPush();
+                    $crm->student_id = $student->id;
+                    $crm->type = 9;
+                    $crm->lead_id = $leadId;
+                    $crm->lead_status = User::STEP_STATUS_6;
+                    $crm->data_save_time = time();
+                    $crm->save(false);
+                }
+
 //                if ($student->lead_id != null) {
 //                    $result = Passport::updateCrm($student);
 //                    if ($result['is_ok']) {

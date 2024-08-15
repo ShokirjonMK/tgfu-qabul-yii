@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use common\models\AuthAssignment;
+use common\models\CrmPush;
 use common\models\Direction;
 use common\models\DirectionCourse;
 use common\models\DirectionForm;
@@ -123,6 +124,24 @@ class StepThree3 extends Model
             $student->save(false);
             $user->step = 5;
             $user->save(false);
+
+            $queryCrm = CrmPush::findOne([
+                'student_id' => $student->id,
+                'type' => 1,
+            ]);
+            if ($queryCrm) {
+                $leadId = null;
+                if ($queryCrm) {
+                    $leadId = $queryCrm->lead_id;
+                }
+                $crm = new CrmPush();
+                $crm->student_id = $student->id;
+                $crm->type = 10;
+                $crm->lead_id = $leadId;
+                $crm->lead_status = User::STEP_STATUS_6;
+                $crm->data_save_time = time();
+                $crm->save(false);
+            }
         }
 
         if (count($errors) == 0) {

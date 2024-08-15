@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\CrmPush;
 use common\models\Direction;
 use common\models\DirectionSubject;
 use common\models\EduYearForm;
@@ -85,6 +86,24 @@ class ContractController extends Controller
                 'keywords' => 'pdf, contract, student',
             ],
         ]);
+
+        $queryCrm = CrmPush::findOne([
+            'student_id' => $student->id,
+            'type' => 1,
+        ]);
+        if ($queryCrm) {
+            $leadId = null;
+            if ($queryCrm) {
+                $leadId = $queryCrm->lead_id;
+            }
+            $crm = new CrmPush();
+            $crm->student_id = $student->id;
+            $crm->type = 7;
+            $crm->lead_id = $leadId;
+            $crm->lead_status = User::STEP_STATUS_7;
+            $crm->data_save_time = time();
+            $crm->save(false);
+        }
 
 //        if ($student->lead_id != null) {
 //            try {

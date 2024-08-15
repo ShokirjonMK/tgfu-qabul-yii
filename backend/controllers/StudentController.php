@@ -11,6 +11,7 @@ use backend\models\StepThree3;
 use backend\models\StepThree4;
 use backend\models\UserUpdate;
 use common\models\AuthAssignment;
+use common\models\CrmPush;
 use common\models\Direction;
 use common\models\DirectionCourse;
 use common\models\EduType;
@@ -513,6 +514,25 @@ class StudentController extends Controller
             $t = true;
         }
         if ($t) {
+
+            $queryCrm = CrmPush::findOne([
+                'student_id' => $student->id,
+                'type' => 1,
+            ]);
+            if ($queryCrm) {
+                $leadId = null;
+                if ($queryCrm) {
+                    $leadId = $queryCrm->lead_id;
+                }
+                $crm = new CrmPush();
+                $crm->student_id = $student->id;
+                $crm->type = 8;
+                $crm->lead_id = $leadId;
+                $crm->lead_status = User::STEP_STATUS_8;
+                $crm->data_save_time = time();
+                $crm->save(false);
+            }
+
 //            if ($student->lead_id != null) {
 //                try {
 //                    $amoCrmClient = Yii::$app->ikAmoCrm;

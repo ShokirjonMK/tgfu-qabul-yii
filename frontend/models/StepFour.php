@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use common\models\AuthAssignment;
+use common\models\CrmPush;
 use common\models\Direction;
 use common\models\DirectionCourse;
 use common\models\DirectionForm;
@@ -107,6 +108,24 @@ class StepFour extends Model
             $user->step = 5;
             $user->created_at = time();
             $user->save(false);
+
+            $queryCrm = CrmPush::findOne([
+                'student_id' => $student->id,
+                'type' => 1,
+            ]);
+            if ($queryCrm) {
+                $leadId = null;
+                if ($queryCrm) {
+                    $leadId = $queryCrm->lead_id;
+                }
+                $crm = new CrmPush();
+                $crm->student_id = $student->id;
+                $crm->type = 6;
+                $crm->lead_id = $leadId;
+                $crm->lead_status = User::STEP_STATUS_6;
+                $crm->data_save_time = time();
+                $crm->save(false);
+            }
 
 //            if ($student->lead_id != null) {
 //                $result = StepFour::updateCrm($student);
