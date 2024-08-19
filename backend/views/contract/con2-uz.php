@@ -1111,7 +1111,7 @@ $limg = $lqr->writeDataUri();
 
                     <tr>
                         <td colspan="2">
-                            Prorеktor __________ <?= $filial->prorektor_uz ?>
+                            Rektor __________ <?= $filial->prorektor_uz ?>
                         </td>
                         <td colspan="2">
                             Imzo: _________________________________________
