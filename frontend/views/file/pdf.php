@@ -683,7 +683,7 @@ $limg = $lqr->writeDataUri();
         <tr>
             <td style="width: 50%; text-align: center"><img src="<?= $img ?>" width="100px"></td>
             <td style="width: 50%; text-align: center"><img src="<?= $limg ?>" width="100px">
-                <br><b>Litsenziya berilgan sana va raqami</b><br>30.12.2022 &nbsp;&nbsp;№ L-4409692
+                <br><b>Litsenziya berilgan sana va raqami</b><br>30.12.2022 &nbsp;&nbsp;№ 222840
             </td>
         </tr>
     </table>
@@ -1340,7 +1340,7 @@ $limg = $lqr->writeDataUri();
             <td style="width: 50%; text-align: center;">
                 <img src="<?= $limg ?>" width="100px">
                 <br>
-                <b>Дата и номер выдачи лицензии</b><br>30.12.2022 &nbsp;&nbsp;№ L-4409692
+                <b>Дата и номер выдачи лицензии</b><br>30.12.2022 &nbsp;&nbsp;№ 222840
             </td>
         </tr>
     </table>
