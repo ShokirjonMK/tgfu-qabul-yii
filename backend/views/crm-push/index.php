@@ -17,6 +17,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    <div class="form-section">
+        <div class="form-section_item">
+            <div class="d-flex justify-content-between align-items-center">
+                <p><b>Jami soni: &nbsp; <?= $dataProvider->totalCount ?></b></p>
+            </div>
+        </div>
+    </div>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -32,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'contentOptions' => ['date-label' => 'data_save_time'],
                 'format' => 'raw',
                 'value' => function($model) {
-                    if ($model->push_time != null) {
+                    if ($model->data_save_time != null) {
                         return date("Y-m-d H:i:s" , $model->data_save_time);
                     }
                     return null;
