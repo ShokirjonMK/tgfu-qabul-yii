@@ -373,13 +373,20 @@ class FileController extends Controller
             if ($queryCrm) {
                 $leadId = $queryCrm->lead_id;
             }
-            $crm = new CrmPush();
-            $crm->student_id = $student->id;
-            $crm->type = 7;
-            $crm->lead_id = $leadId;
-            $crm->lead_status = User::STEP_STATUS_7;
-            $crm->data_save_time = time();
-            $crm->save(false);
+            $query = CrmPush::findOne([
+                'student_id' => $student->id,
+                'type' => 7,
+                'is_deleted' => 0
+            ]);
+            if (!$query) {
+                $crm = new CrmPush();
+                $crm->student_id = $student->id;
+                $crm->type = 7;
+                $crm->lead_id = $leadId;
+                $crm->lead_status = User::STEP_STATUS_7;
+                $crm->data_save_time = time();
+                $crm->save(false);
+            }
         }
 
 //        if ($student->lead_id != null) {
