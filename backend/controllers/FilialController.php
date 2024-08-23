@@ -113,6 +113,13 @@ class FilialController extends Controller
      */
     public function actionDelete($id)
     {
+        $user = \Yii::$app->user->identity;
+        if ($user->user_role == "moderator") {
+            $errors[] = ["Ma'lumotni o'chirish imkonsiz!!!"];
+            \Yii::$app->session->setFlash('error' , $errors);
+            return $this->redirect(['filial/index']);
+        }
+
         $model = $this->findModel($id);
         $model->is_deleted = 1;
         $model->save(false);
