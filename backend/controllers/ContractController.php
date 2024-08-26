@@ -157,8 +157,6 @@ class ContractController extends Controller
                     $dirSub->question_count = 15;
                     $dirSub->save(false);
                 }
-            } else {
-                dd($dirSubs);
             }
         }
 
