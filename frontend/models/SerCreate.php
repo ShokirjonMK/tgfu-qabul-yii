@@ -36,7 +36,7 @@ class SerCreate extends Model
             [
                 [ 'file' ],
                 'file',
-                'extensions'=>'pdf',
+                'extensions'=>'pdf , png , jpg',
                 'skipOnEmpty'=>true,
                 'maxSize' => $this->fileMaxSize
             ],
