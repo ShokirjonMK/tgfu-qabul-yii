@@ -135,14 +135,15 @@ class ContractController extends Controller
         return $pdf->render();
     }
 
-    public function actionBug5()
+    public function actionBug6()
     {
-        $directions = Direction::find()
-            ->where(['edu_type_id' => 1, 'status' => 1, 'is_deleted' => 0])
+        $directions = DirectionSubject::find()
+            ->where(['status' => 1, 'is_deleted' => 0])
             ->all();
 
         foreach ($directions as $direction) {
-
+            $direction->ball = 15;
+            $direction->save(false);
         }
 
         return $this->redirect(['site/index']);
