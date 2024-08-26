@@ -17,6 +17,8 @@ $breadcrumbs['item'][] = [
     'label' => Yii::t('app', 'Bosh sahifa'),
     'url' => ['/'],
 ];
+$user = Yii::$app->user->identity;
+$thisRole = $user->user_role;
 ?>
 <div class="student-dtm-index">
 
@@ -146,13 +148,15 @@ $breadcrumbs['item'][] = [
             <div class="d-flex justify-content-between align-items-center">
                 <p><b>Jami soni: &nbsp; <?= $dataProvider->totalCount ?></b></p>
 
-                <div class="page_export">
-                    <?php echo ExportMenu::widget([
-                        'dataProvider' => $dataProvider,
-                        'columns' => $data,
-                        'asDropdown' => false,
-                    ]); ?>
-                </div>
+                <?php if ($thisRole == 'admin' || $thisRole == 'supper_admin'): ?>
+                    <div class="page_export">
+                        <?php echo ExportMenu::widget([
+                            'dataProvider' => $dataProvider,
+                            'columns' => $data,
+                            'asDropdown' => false,
+                        ]); ?>
+                    </div>
+                <?php endif; ?>
 
             </div>
         </div>
