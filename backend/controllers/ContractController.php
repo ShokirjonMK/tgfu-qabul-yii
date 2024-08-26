@@ -158,7 +158,7 @@ class ContractController extends Controller
                     $dirSub->save(false);
                 }
             } else {
-                dd(232323);
+                dd($dirSubs);
             }
         }
 
