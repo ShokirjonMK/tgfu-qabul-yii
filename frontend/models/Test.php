@@ -178,7 +178,24 @@ class Test extends Model
         $errors = [];
         $time = time();
 
-        if ($time < $model->finish_time) {
+        $finish_time = $model->finish_time;
+
+        $five_minutes_before = $finish_time - 300;
+
+        if ($time < $finish_time) {
+            if ($time < $five_minutes_before) {
+                $examQuestions = ExamStudentQuestions::findOne([
+                    'option_id' => null,
+                    'exam_id' => $model->id,
+                    'status' => 1,
+                    'is_deleted' => 0
+                ]);
+                if ($examQuestions) {
+                    $errors[] = [$examQuestions->order." - savol belgilanmagan. Testni yakunlash uchun barcha javobni belgilashingiz shart!"];
+                    $transaction->rollBack();
+                    return ['is_ok' => false , 'errors' => $errors];
+                }
+            }
             $model->finish_time = $time;
         }
 
