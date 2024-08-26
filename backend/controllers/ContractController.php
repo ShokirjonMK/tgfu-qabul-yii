@@ -137,22 +137,6 @@ class ContractController extends Controller
 
     public function actionBug8()
     {
-        $directions = Direction::find()
-            ->where(['edu_year_type_id' => 1 , 'is_deleted' => 0 , 'status' => 1])
-            ->all();
-
-        foreach ($directions as $direction) {
-            $dirSubs = DirectionSubject::find()
-                ->where(['direction_id' => $direction->id, 'is_deleted' => 0])
-                ->orderBy('ball desc')->all();
-            if (count($dirSubs) == 1) {
-                foreach ($dirSubs as $dirSub) {
-                    $dirSub->ball = 3;
-                    $dirSub->question_count = 15;
-                    $dirSub->save(false);
-                }
-            }
-        }
 
         return $this->redirect(['site/index']);
     }
