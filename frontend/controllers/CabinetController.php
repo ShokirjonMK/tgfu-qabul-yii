@@ -152,10 +152,6 @@ class CabinetController extends Controller
 
     public function actionTest()
     {
-        $errors[] = ['Testni hozircha boshlab bo\'lmaydi. Iltimos keyinroq urinib ko\'ring!'];
-        Yii::$app->session->setFlash('error' , $errors);
-        return $this->redirect(['cabinet/index']);
-
         $user = Yii::$app->user->identity;
         $student = Student::findOne(['user_id' => $user->id]);
 
