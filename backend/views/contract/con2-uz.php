@@ -118,7 +118,7 @@ $limg = $lqr->writeDataUri();
 
     <tr>
         <td colspan="4">
-            <b style="text-transform: uppercase;"><?= $filial->univer_name_uz ?></b> oliy ta’lim tashkiloti (keyingi o‘rinlarda “Universitet”) nomidan Ustav asosida ish yurituvchi prorektor  <b style="text-transform: uppercase;"><?= $filial->prorektor_uz ?></b> birinchi tomondan,
+            <b style="text-transform: uppercase;"><?= $filial->univer_name_uz ?></b> oliy ta’lim tashkiloti (keyingi o‘rinlarda “Universitet”) nomidan Ustav asosida ish yurituvchi rektor  <b style="text-transform: uppercase;"><?= $filial->prorektor_uz ?></b> birinchi tomondan,
         </td>
     </tr>
 
