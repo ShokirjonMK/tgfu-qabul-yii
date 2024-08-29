@@ -86,9 +86,11 @@ $magister = StudentMagistr::find()
                 'value' => function ($model) {
                     $t = \common\models\DirectionSubject::find()->where(['direction_id' => $model->id, 'status' => 1 , 'is_deleted' => 0])->all();
                     if (count($t)) {
+                        $p = '';
                         foreach ($t as $y) {
-                            echo $y->subject->name_uz;
+                             $p .= $y->subject->name_uz."<br>";
                         }
+                        return $p;
                     }
                 },
                 'contentOptions' => ['class' => 'wid250'],
