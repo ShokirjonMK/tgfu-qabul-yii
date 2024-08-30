@@ -103,7 +103,7 @@ class CrmPushController extends Controller
 
                 $leadName = $normalizedPhoneNumber;
                 $message = '';
-                $tags = ['@ikbol_2001'];
+                $tags = ['TGFU'];
                 $pipelineId = User::PIPELINE_ID;
                 $statusId = User::STEP_STATUS_1;
                 $leadPrice = 0;
