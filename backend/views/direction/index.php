@@ -80,21 +80,21 @@ $magister = StudentMagistr::find()
                 'contentOptions' => ['class' => 'wid250'],
             ],
 
-            [
-                'attribute' => 'Fanlar',
-                'format' => 'raw',
-                'value' => function ($model) {
-                    $t = \common\models\DirectionSubject::find()->where(['direction_id' => $model->id, 'status' => 1 , 'is_deleted' => 0])->all();
-                    if (count($t)) {
-                        $p = '';
-                        foreach ($t as $y) {
-                             $p .= $y->subject->name_uz."<br>";
-                        }
-                        return $p;
-                    }
-                },
-                'contentOptions' => ['class' => 'wid250'],
-            ],
+//            [
+//                'attribute' => 'Fanlar',
+//                'format' => 'raw',
+//                'value' => function ($model) {
+//                    $t = \common\models\DirectionSubject::find()->where(['direction_id' => $model->id, 'status' => 1 , 'is_deleted' => 0])->all();
+//                    if (count($t)) {
+//                        $p = '';
+//                        foreach ($t as $y) {
+//                             $p .= $y->subject->name_uz."<br>";
+//                        }
+//                        return $p;
+//                    }
+//                },
+//                'contentOptions' => ['class' => 'wid250'],
+//            ],
             'edu_duration',
             [
                 'attribute' => 'contract',
