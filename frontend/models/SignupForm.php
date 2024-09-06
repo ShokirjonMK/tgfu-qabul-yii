@@ -89,7 +89,7 @@ class SignupForm extends Model
                 $user->generateEmailVerificationToken();
                 $user->generatePasswordResetToken();
 
-                if ($user->sms_time <= time()) {
+                if ($user->sms_time <= time() || $user->sms_time == null) {
                     $user->sms_time = strtotime('+3 minutes', time());
                     $user->sms_number = rand(100000, 999999);
                 }
