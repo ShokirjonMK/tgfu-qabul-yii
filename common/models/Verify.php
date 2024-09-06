@@ -173,6 +173,7 @@ class Verify extends Model
         } else {
             if ($user->sms_number == $model->sms_code) {
 
+                $pass = $user->new_parol;
                 $user->setPassword($user->new_parol);
                 $user->generateAuthKey();
                 $user->generateEmailVerificationToken();
@@ -184,7 +185,7 @@ class Verify extends Model
                 $user->save(false);
 
                 $student = $user->student;
-                $student->password = $user->new_parol;
+                $student->password = $pass;
                 $student->save(false);
 
                 Yii::$app->user->login($user,  3600 * 24 * 7);
