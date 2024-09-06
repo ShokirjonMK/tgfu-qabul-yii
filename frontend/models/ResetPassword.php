@@ -80,7 +80,7 @@ class ResetPassword extends Model
 
         if ($user) {
             if ($user->status == 10) {
-                if ($user->sms_time <= time()) {
+                if ($user->sms_time <= time() || $user->sms_time == null) {
                     $t = true;
                     $user->sms_time = strtotime('+3 minutes', time());
                     $user->sms_number = rand(100000, 999999);
