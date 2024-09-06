@@ -63,7 +63,7 @@ class Verify extends Model
     public static function confirm($user , $model) {
         $transaction = Yii::$app->db->beginTransaction();
         $errors = [];
-        $time = time() + 5;
+        $time = time();
 
         if (!$model->validate()) {
             $errors[] = $model->simple_errors($model->errors);
@@ -125,12 +125,11 @@ class Verify extends Model
     public static function sendSms($user) {
         $transaction = Yii::$app->db->beginTransaction();
         $errors = [];
-        $time = time();
         $t = false;
 
         $smsTime = $user->sms_time;
 
-        if ($smsTime < $time) {
+        if ($smsTime < time()) {
             $user->get_token = User::ikToken();
             $user->sms_time = strtotime('+3 minutes', time());
             $user->sms_number = rand(100000, 999999);
