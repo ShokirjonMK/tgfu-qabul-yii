@@ -40,7 +40,7 @@ $this->title = Yii::t("app" , "a35");
         <div class="sign_in">
             <?= Html::submitButton(Yii::t("app" , "a37"), ['class' => 'b-btn b-primary b-big btn-block', 'id' => 'sendSmsCode', 'name' => 'login-button']) ?>
             <?= Html::a(Yii::t('app', 'a38'),
-                ['send-sms', 'id' => $user->get_token], [
+                ['pass-send-sms', 'id' => $user->get_token], [
                     'class' => 'b-btn b-primary b-big btn-block verifty_send_sms',
                     'id' => 'sendSMS'
                 ]) ?>

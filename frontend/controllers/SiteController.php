@@ -207,6 +207,33 @@ class SiteController extends Controller
     }
 
 
+    public function actionPassVerify($id)
+    {
+        $this->layout = '_cabinet-step';
+
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $user = $this->findUser($id);
+        $model = new Verify();
+        if ($model->load(Yii::$app->request->post())) {
+            $result = Verify::confirm($user , $model);
+            if ($result['is_ok']) {
+                Yii::$app->session->setFlash('success');
+                return $this->redirect(['cabinet/index']);
+            }
+            Yii::$app->session->setFlash('error' , $result['errors']);
+            return $this->redirect(['password-verify' , 'id' => $result['user']->get_token]);
+        }
+
+        return $this->render('verify', [
+            'model' => $model,
+            'user' => $user
+        ]);
+    }
+
+
     public function actionVerify($id)
     {
         $this->layout = '_cabinet-step';
@@ -232,6 +259,28 @@ class SiteController extends Controller
             'user' => $user
         ]);
     }
+
+
+
+    public function actionPassSendSms($id)
+    {
+        $this->layout = '_cabinet-step';
+
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+        $user = $this->findUserActive($id);
+
+        $result = Verify::sendSms($user);
+
+        if ($result['is_ok']) {
+            Yii::$app->session->setFlash('success');
+        } else {
+            Yii::$app->session->setFlash('error' , $result['errors']);
+        }
+        return $this->redirect(['password-verify' , 'id' => $result['user']->get_token]);
+    }
+
 
     public function actionSendSms($id)
     {
