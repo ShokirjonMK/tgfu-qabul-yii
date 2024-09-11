@@ -324,24 +324,21 @@ class CrmPushController extends Controller
 
     public static function type8($model)
     {
-        $student = Student::findOne($model->student_id);
-        if ($student) {
-            try {
-                $amoCrmClient = Yii::$app->ikAmoCrm;
-                $leadId = $model->lead_id;
-                $tags = [];
-                $message = '';
-                $customFields = [];
+        try {
+            $amoCrmClient = Yii::$app->ikAmoCrm;
+            $leadId = $model->lead_id;
+            $tags = [];
+            $message = '';
+            $customFields = [];
 
-                $updatedFields = [
-                    'statusId' => User::STEP_STATUS_8
-                ];
+            $updatedFields = [
+                'statusId' => User::STEP_STATUS_8
+            ];
 
-                $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
-                return ['is_ok' => true, 'data' => $updatedLead];
-            } catch (\Exception $e) {
-                return ['is_ok' => false];
-            }
+            $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+            return ['is_ok' => true, 'data' => $updatedLead];
+        } catch (\Exception $e) {
+            return ['is_ok' => false];
         }
         return ['is_ok' => false];
     }
