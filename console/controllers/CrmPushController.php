@@ -26,6 +26,7 @@ class CrmPushController extends Controller
 
         $query = CrmPush::find()
             ->where(['status' => 0])
+            ->andWhere(['<>' , 'is_deleted' , 20])
             ->andWhere(['or',
                 ['and', ['type' => 1], ['lead_id' => null]],  // type 1 uchun lead_id null bo'lishi kerak
                 ['and', ['<>', 'type', 1], ['is not', 'lead_id', null]]  // boshqalar uchun lead_id null emas
@@ -81,7 +82,7 @@ class CrmPushController extends Controller
                         }
                     }
                 } else {
-                    $item->is_deleted = $item->is_deleted + 1;
+                    $item->is_deleted = 20;
                 }
                 $item->push_time = time();
                 $item->save(false);
@@ -133,23 +134,20 @@ class CrmPushController extends Controller
 
     public static function type2($model)
     {
-        $student = Student::findOne($model->student_id);
-        if ($student) {
-            try {
-                $amoCrmClient = Yii::$app->ikAmoCrm;
-                $leadId = $model->lead_id;
-                $tags = [];
-                $customFields = [];
-                $message = '';
+        try {
+            $amoCrmClient = Yii::$app->ikAmoCrm;
+            $leadId = $model->lead_id;
+            $tags = [];
+            $customFields = [];
+            $message = '';
 
-                $updatedFields = [
-                    'statusId' => User::STEP_STATUS_2
-                ];
-                $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
-                return ['is_ok' => true, 'data' => $updatedLead];
-            } catch (\Exception $e) {
-                return ['is_ok' => false];
-            }
+            $updatedFields = [
+                'statusId' => User::STEP_STATUS_2
+            ];
+            $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+            return ['is_ok' => true, 'data' => $updatedLead];
+        } catch (\Exception $e) {
+            return ['is_ok' => false];
         }
         return ['is_ok' => false];
     }
@@ -278,48 +276,42 @@ class CrmPushController extends Controller
 
     public static function type6($model)
     {
-        $student = Student::findOne($model->student_id);
-        if ($student) {
-            try {
-                $amoCrmClient = Yii::$app->ikAmoCrm;
-                $leadId = $model->lead_id;
-                $tags = [];
-                $message = '';
-                $customFields = [];
+        try {
+            $amoCrmClient = Yii::$app->ikAmoCrm;
+            $leadId = $model->lead_id;
+            $tags = [];
+            $message = '';
+            $customFields = [];
 
-                $updatedFields = [
-                    'statusId' => User::STEP_STATUS_6
-                ];
+            $updatedFields = [
+                'statusId' => User::STEP_STATUS_6
+            ];
 
-                $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
-                return ['is_ok' => true, 'data' => $updatedLead];
-            } catch (\Exception $e) {
-                return ['is_ok' => false];
-            }
+            $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+            return ['is_ok' => true, 'data' => $updatedLead];
+        } catch (\Exception $e) {
+            return ['is_ok' => false];
         }
         return ['is_ok' => false];
     }
 
     public static function type7($model)
     {
-        $student = Student::findOne($model->student_id);
-        if ($student) {
-            try {
-                $amoCrmClient = Yii::$app->ikAmoCrm;
-                $leadId = $model->lead_id;
-                $tags = [];
-                $message = '';
-                $customFields = [];
+        try {
+            $amoCrmClient = Yii::$app->ikAmoCrm;
+            $leadId = $model->lead_id;
+            $tags = [];
+            $message = '';
+            $customFields = [];
 
-                $updatedFields = [
-                    'statusId' => User::STEP_STATUS_7
-                ];
+            $updatedFields = [
+                'statusId' => User::STEP_STATUS_7
+            ];
 
-                $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
-                return ['is_ok' => true, 'data' => $updatedLead];
-            } catch (\Exception $e) {
-                return ['is_ok' => false];
-            }
+            $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
+            return ['is_ok' => true, 'data' => $updatedLead];
+        } catch (\Exception $e) {
+            return ['is_ok' => false];
         }
         return ['is_ok' => false];
     }
