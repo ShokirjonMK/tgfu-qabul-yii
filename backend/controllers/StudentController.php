@@ -553,6 +553,7 @@ class StudentController extends Controller
 //                    return $this->redirect(['site/index']);
 //                }
 //            }
+
             StudentDtm::deleteAll(['student_id' => $student->id]);
             StudentPerevot::deleteAll(['student_id' => $student->id]);
             StudentOferta::deleteAll(['student_id' => $student->id]);

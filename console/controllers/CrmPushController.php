@@ -25,7 +25,7 @@ class CrmPushController extends Controller
         $transaction = Yii::$app->db->beginTransaction();
 
         $query = CrmPush::find()
-            ->where(['status' => 0, 'is_deleted' => 0])
+            ->where(['status' => 0])
             ->andWhere(['or',
                 ['and', ['type' => 1], ['lead_id' => null]],  // type 1 uchun lead_id null bo'lishi kerak
                 ['and', ['<>', 'type', 1], ['is not', 'lead_id', null]]  // boshqalar uchun lead_id null emas
@@ -80,12 +80,9 @@ class CrmPushController extends Controller
                             CrmPush::updateAll(['lead_id' => $amo->id], ['student_id' => $student->id]);
                         }
                     }
-                } else {
-                    $item->is_deleted = 1;
+                    $item->push_time = time();
+                    $item->save(false);
                 }
-
-                $item->push_time = time();
-                $item->save(false);
             }
         }
 
