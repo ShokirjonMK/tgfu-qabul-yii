@@ -113,7 +113,11 @@ class Test extends Model
 
                 } elseif ($exam->status == 2) {
                     if ($exam->finish_time <= $time) {
+
+
                         $exam = self::finish($exam);
+
+
                     }
                 } else {
                     $errors[] = ['XATOLIK!!!'];

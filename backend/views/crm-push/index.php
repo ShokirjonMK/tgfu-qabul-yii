@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'lead_id',
             'lead_status',
             'status',
+            'is_deleted',
             [
                 'attribute' => 'data_save_time',
                 'contentOptions' => ['date-label' => 'data_save_time'],
