@@ -39,7 +39,7 @@ class CrmPushSearch extends CrmPush
      */
     public function search($params)
     {
-        $query = CrmPush::find();
+        $query = CrmPush::find()->orderBy('data_save_time asc');
 
         // add conditions that should always apply here
 
