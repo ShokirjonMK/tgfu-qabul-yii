@@ -80,9 +80,11 @@ class CrmPushController extends Controller
                             CrmPush::updateAll(['lead_id' => $amo->id], ['student_id' => $student->id]);
                         }
                     }
-                    $item->push_time = time();
-                    $item->save(false);
+                } else {
+                    $item->is_deleted = $item->is_deleted + 1;
                 }
+                $item->push_time = time();
+                $item->save(false);
             }
         }
 
