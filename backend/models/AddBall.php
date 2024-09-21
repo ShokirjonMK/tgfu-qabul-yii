@@ -77,7 +77,11 @@ class AddBall extends Model
                 $exam->status = 3;
                 $exam->confirm_date = time();
                 $exam->contract_type = 1;
-                $exam->contract_price = $exam->direction->contract;
+                $direction = $exam->direction;
+                $exam->contract_price = $direction->contract;
+                if ($direction->edu_form_id == 2 && $direction->edu_type_id != 4) {
+                    $exam->contract_price = $direction->contract * 0.75;
+                }
                 $exam->save(false);
             }
         }

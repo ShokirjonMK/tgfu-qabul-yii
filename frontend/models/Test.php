@@ -170,6 +170,11 @@ class Test extends Model
         $model->contract_type = 1;
         $model->contract_price = $direction->contract;
         $model->confirm_date = time();
+
+        if ($direction->edu_form_id == 2 && $direction->edu_type_id != 4) {
+            $model->contract_price = $direction->contract * 0.75;
+        }
+
         $model->save(false);
 
         return $model;
