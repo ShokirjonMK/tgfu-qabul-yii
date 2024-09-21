@@ -276,4 +276,9 @@ class AmoCrmClient extends Component  implements AmoCrmSettings, IAmoCrmClient
         }
     }
 
+    public function getLoad($leadId)
+    {
+        $lead = $this->apiClient->leads()->getOne($leadId);
+        return $lead;
+    }
 }

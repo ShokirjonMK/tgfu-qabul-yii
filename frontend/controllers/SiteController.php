@@ -81,8 +81,9 @@ class SiteController extends Controller
 
     public function actionCr()
     {
-        $amoCrmClient = Yii::$app->ikAmoCrm->getPipelines();
-        dd($amoCrmClient);
+        $amoCrmClient = Yii::$app->ikAmoCrm;
+        $lead = $amoCrmClient->getLoad(25266269);
+        dd($lead);
     }
 
 

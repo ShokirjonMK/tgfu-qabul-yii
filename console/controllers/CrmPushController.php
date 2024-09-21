@@ -302,10 +302,13 @@ class CrmPushController extends Controller
             $leadId = $model->lead_id;
             $tags = [];
             $message = '';
-            $customFields = [];
 
             $updatedFields = [
                 'statusId' => User::STEP_STATUS_7
+            ];
+
+            $customFields = [
+                '1958937' => $model->data_save_time,
             ];
 
             $updatedLead = $amoCrmClient->updateLead($leadId, $updatedFields, $tags, $message, $customFields);
