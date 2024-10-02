@@ -22,6 +22,8 @@ $joy = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 $date = '';
 $link = '';
 $con2 = '';
+$startDate = strtotime('2024-09-20 00:00:00');
+$lastDate = strtotime('2024-09-30 00:00:00');
 if ($student->edu_type_id == 1) {
     $contract = Exam::findOne([
         'direction_id' => $direction->id,
@@ -30,6 +32,9 @@ if ($student->edu_type_id == 1) {
         'is_deleted' => 0
     ]);
     $code = $cons->code.'-Q2RU';
+    if ($contract->confirm_date > $lastDate) {
+        $contract->confirm_date = rand($startDate, $lastDate);
+    }
     $date = date("Y-m-d H:i:s" , $contract->confirm_date);
     $link = $contract->contract_link;
     $con2 = $contract->contract_third;
@@ -43,6 +48,9 @@ if ($student->edu_type_id == 1) {
         'is_deleted' => 0
     ]);
     $code = $cons->code.'-P2RU';
+    if ($contract->confirm_date > $lastDate) {
+        $contract->confirm_date = rand($startDate, $lastDate);
+    }
     $date = date("Y-m-d H:i:s" , $contract->confirm_date);
     $link = $contract->contract_link;
     $con2 = $contract->contract_third;
@@ -56,6 +64,9 @@ if ($student->edu_type_id == 1) {
         'is_deleted' => 0
     ]);
     $code = $cons->code.'-D2RU';
+    if ($contract->confirm_date > $lastDate) {
+        $contract->confirm_date = rand($startDate, $lastDate);
+    }
     $date = date("Y-m-d H:i:s" , $contract->confirm_date);
     $link = $contract->contract_link;
     $con2 = $contract->contract_third;

@@ -45,11 +45,6 @@ class ContractController extends Controller
 
     public function actionIndex($id , $type)
     {
-        $errors = [];
-        $errors[] = ['Qabul jarayoni yopildi. Shartnoma berish to\'xtatildi!'];
-        \Yii::$app->session->setFlash('error' , $errors);
-        return $this->redirect(\Yii::$app->request->referrer);
-        
         $student = Student::findOne(['id' => $id]);
         $user = $student->user;
 
