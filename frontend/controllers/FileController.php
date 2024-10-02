@@ -322,6 +322,11 @@ class FileController extends Controller
 
     public function actionContract($type)
     {
+        $errors = [];
+        $errors[] = ['Qabul jarayoni yopildi. Shartnoma berish to\'xtatildi!'];
+        Yii::$app->session->setFlash('error' , $errors);
+        return $this->redirect(Yii::$app->request->referrer);
+
         $user = Yii::$app->user->identity;
         $student = Student::findOne(['user_id' => $user->id]);
 
