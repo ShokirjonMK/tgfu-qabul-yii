@@ -79,9 +79,6 @@ class AddBall extends Model
                 $exam->contract_type = 1;
                 $direction = $exam->direction;
                 $exam->contract_price = $direction->contract;
-                if ($direction->edu_form_id == 2 && $direction->edu_type_id != 4) {
-                    $exam->contract_price = $direction->contract * 0.75;
-                }
                 $exam->save(false);
             }
         }

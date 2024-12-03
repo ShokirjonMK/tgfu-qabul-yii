@@ -163,9 +163,6 @@ class StudentPerevot extends \yii\db\ActiveRecord
                 Message::sendedSms($phone , $text);
                 $model->confirm_date = time();
                 $model->contract_price = $model->contract_type * $model->direction->contract;
-                if ($direction->edu_form_id == 2 && $direction->edu_type_id != 4) {
-                    $model->contract_price = $direction->contract * 0.75;
-                }
                 $model->save(false);
             } elseif ($model->file_status == self::NO_CONFIRM) {
                 $text = $model->sms_text;
